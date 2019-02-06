@@ -1,0 +1,37 @@
+<communities>
+    <community id="1">
+        <name>Best WG</name>
+        <description>asdfsd ökasdf ökuh</description>
+        <size>3</size>
+        <location>Rotkreuz</location>
+        <mail>contact@mywg.ch</mail>
+    </community>
+    ...
+</communities>
+
+<companies>
+    <company id="1">
+        <name>IKEA</name>
+        <description>asdfsd ökasdf ökuh</description>
+        <location>Rothenburg</location>
+        <numberOfEmployees>300</numberOfEmployees>
+    </company>
+    ...
+</companies>
+
+<challenges>
+    <challenge companyId="1">
+        <title>Best Meal Challenge</title>
+        <description>Which community cooks the best meal?</description>
+        <price>CHF 1000.- Gutschein</price>
+        <registrations>
+            <registration communityId="1">
+                <date>15.02.2019</date>
+                <title>Das besten Magebrot</title>
+                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+            </registration>
+        <registrations>
+        ...
+    </challenge>
+    ...
+</challenges>
