@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<companies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="companies.xsd">
+    <company id="1">
+        <name>IKEA</name>
+        <description>asdfsd ökasdf ökuh</description>
+        <location>Rothenburg</location>
+        <numberOfEmployees>300</numberOfEmployees>
+    </company>
+</companies>

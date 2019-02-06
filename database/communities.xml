@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<communities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="communities.xsd">
+    <community id="1">
+        <name>Best WG</name>
+        <description>asdfsd ökasdf ökuh</description>
+        <size>3</size>
+        <location>Rotkreuz</location>
+        <mail>contact@mywg.ch</mail>
+    </community>
+</communities>

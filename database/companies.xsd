@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="companies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="company" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+    
+    <xs:unique name="companyId">
+      <xs:selector xpath="company"/>
+      <xs:field xpath="@id"/>
+    </xs:unique>
+    
+  </xs:element>
+
+  <xs:element name="company">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="description"/>
+        <xs:element type="xs:string" name="location"/>
+        <xs:element type="xs:string" name="numberOfEmployees"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

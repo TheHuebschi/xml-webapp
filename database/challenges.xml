@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<challenges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="challenges.xsd">
+    <challenge companyId="1">
+        <title>Best Meal Challenge</title>
+        <description>Which community cooks the best meal?</description>
+        <price>CHF 1000.- Gutschein</price>
+        <registrations>
+            <registration communityId="1">
+                <date>15.02.2019</date>
+                <title>Das besten Magebrot</title>
+                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+            </registration>
+        </registrations>
+    </challenge>
+</challenges>
