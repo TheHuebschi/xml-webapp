@@ -9,6 +9,7 @@
                 <date>15.02.2019</date>
                 <title>Das besten Magebrot</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+                <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
             </registration>
         </registrations>
     </challenge>
@@ -21,11 +22,13 @@
                 <date>15.03.2019</date>
                 <title>Das besten Magebrot</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+                <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>17.03.2019</date>
                 <title>Die grösste Pizza</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+                <pictureLink>https://test1.stalder.rocks/img/picture_2.png</pictureLink>
             </registration>
         </registrations>
     </challenge>

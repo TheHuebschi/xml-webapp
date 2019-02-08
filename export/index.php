@@ -1,34 +1,36 @@
 <!doctype html>
 <html lang="en-CH">
 <head>
-    <title>PHP XML Snippets</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Export challenge...</title>
+
 </head>
 <body>
-<div class="container">
-
-    <div>
-        <h1>FOP Service Example</h1>
-        <p class="lead">Send FO file to web service and retrieve generated PDF document.<br>
-            <a href="../" class="btn btn-primary">&laquo; Back</a>
-        </p>
-    </div>
-
-    <div class="panel panel-default">
-        <div class="panel-heading">FOP Service Invocation</div>
-        <div class="panel-body">
-			<?php
-            require 'xslt.php';
-            ?>
-            <?php
-            require 'api_call.php';
-            ?>
-        </div>
-    </div>
-
-</div>
+	<?php
+    $id = $_GET['id'];
+    if (! isset($_GET['id']) || ! preg_match('/^\d{1,9}$/', $id)) {
+        $redirect = "/error.html?id=" . $id;
+        header("HTTP/1.1 301 Moved Permanently");
+        header("Location: $redirect");
+    }
+    $id = $_GET['id'];
+    $pdf_file_path = $_SERVER['DOCUMENT_ROOT'] . '/export/cache/Challenge_' . $id . '.pdf';
+    $fo_file_path = $_SERVER['DOCUMENT_ROOT'] . '/export/cache/Challenge_' . $id . '.fo';
+    $xml_file_path = $_SERVER['DOCUMENT_ROOT'] . '/database/challenges.xml';
+    $xsl_file_path = $_SERVER['DOCUMENT_ROOT'] . '/export/export_challenge.xsl';
+    
+    require 'xslt.php';
+    
+    require 'api_call.php';
+    
+    header("Content-Description: File Transfer");
+    header("Content-Type: application/octet-stream");
+    header("Content-Disposition: attachment; filename=" . basename($pdf_file_path));
+    while (ob_get_level()) {
+        ob_end_clean();
+    }
+    readfile($pdf_file_path);
+    exit();
+    ?>
 </body>
 </html>
 

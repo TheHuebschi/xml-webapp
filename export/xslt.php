@@ -7,19 +7,19 @@
  */
 
 // load XML
-$data = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/database/challenges.xml');
+$data = file_get_contents($xml_file_path);
 $xml = new DOMDocument();
 $xml->loadXML($data);
 
 // load XSL
 $xsl = new DOMDocument();
-$xsl->load($_SERVER['DOCUMENT_ROOT'].'/export/export_challenge.xsl');
+$xsl->load($xsl_file_path);
 
 // transform
 $processor = new XSLTProcessor();
 $processor->importStylesheet($xsl);
-$processor->setParameter('', 'challengeId', '2');
+$processor->setParameter('', 'challengeId', $id);
 $dom = $processor->transformToDoc($xml);
 
 // send result to client
-$dom->save($_SERVER['DOCUMENT_ROOT'].'/export/cache/export.fo');
+$dom->save($fo_file_path);

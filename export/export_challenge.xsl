@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:fo="http://www.w3.org/1999/XSL/Format">
-	<xsl:param name="challengeId" select="''"/>
+	<xsl:param name="challengeId" select="''" />
 	<xsl:template match="/">
 		<fo:root>
 			<fo:layout-master-set>
@@ -18,7 +18,9 @@
 
 				<fo:static-content flow-name="xsl-region-before">
 					<fo:block text-align="center" font-size="8pt">
-						Challenge Export of Challenge #<xsl:value-of select="$challengeId" /> Page 
+						Challenge Export of Challenge #
+						<xsl:value-of select="$challengeId" />
+						Page
 						<fo:page-number />
 					</fo:block>
 				</fo:static-content>
@@ -45,16 +47,18 @@
 			padding-top="5pt" padding-bottom="5pt">
 			<xsl:value-of select="description" />
 		</fo:block>
-		<xsl:apply-templates select="registrations/registration" />
+		<xsl:apply-templates
+			select="registrations/registration" />
 	</xsl:template>
 
 	<xsl:template match="registration">
 		<fo:block font-size="19pt" font-family="sans-serif"
 			line-height="24pt" space-after.optimum="20pt"
 			background-color="black" color="white" text-align="center"
-			padding-top="5pt" padding-bottom="5pt">
+			padding-top="5pt" padding-bottom="5pt" page-break-before="always">
 			<xsl:value-of select="title" />
-		</fo:block><fo:block font-size="19pt" font-family="sans-serif"
+		</fo:block>
+		<fo:block font-size="19pt" font-family="sans-serif"
 			line-height="24pt" space-after.optimum="20pt"
 			background-color="black" color="white" text-align="center"
 			padding-top="5pt" padding-bottom="5pt">
@@ -65,6 +69,10 @@
 			background-color="white" color="black" text-align="left"
 			padding-top="5pt" padding-bottom="5pt">
 			<xsl:value-of select="description" />
+		</fo:block>
+		<fo:block>
+			<fo:external-graphic src="{pictureLink}"
+				content-width="16cm" scaling="uniform" />
 		</fo:block>
 	</xsl:template>
 </xsl:stylesheet>
