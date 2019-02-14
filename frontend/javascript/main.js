@@ -47,7 +47,7 @@ function changePageContent(page) {
     url: 'xslt/' + page + '.xhtml',
     success: function(data) {
       $body = $("#content");
-      $.get ("xslt/home.xhtml", function (data)
+      $.get ('xslt/' + page + '.xhtml', function (data)
       {
           $body.html($(data).children());
       }, 'xml');
