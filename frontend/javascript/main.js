@@ -46,7 +46,12 @@ function changePageContent(page) {
   $.ajax({
     url: 'xslt/' + page + '.xhtml',
     success: function(data) {
-      $('#content').html(data);
+      $body = $("#content");
+      $.get ("xslt/home.xhtml", function (data)
+      {
+          $body.html($(data).children());
+      }, 'xml');
+      //$('#content').html(data);
     }
   });
   console.log("Loaded page content " + page);
