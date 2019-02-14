@@ -34,8 +34,9 @@ body {
 
 #headerBar {
   background-size:cover;
-  background-image: url(../images/Verwischt.jpg);
+  background-image: url(../images/background.jpg);
   color:white;
+  height: 160px;
 }
 
 #navigationBar {
@@ -43,7 +44,7 @@ body {
 }
 
 .container {
-  margin-bottom: 24px;
+  /*margin-bottom: 24px;*/
 }
 
 .footer {
