@@ -44,7 +44,7 @@ function collapseNavigation() {
 
 function changePageContent(page) {
   $.ajax({
-    url: 'html/' + page + '.html',
+    url: 'xslt/' + page + '.xsl',
     success: function(data) {
       $('#content').html(data);
     }

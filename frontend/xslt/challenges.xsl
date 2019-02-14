@@ -8,7 +8,7 @@
                 indent="yes" />
 
     <!-- variables to access the database XML files -->
-    <xsl:variable name="challenges" select="document('../database/challenges.xml')/challenges"/>
+    <xsl:variable name="challenges" select="document('../../database/challenges.xml')/challenges"/>
 
     <xsl:template match="/">
     
@@ -22,7 +22,6 @@
                 <link rel="stylesheet" href="./css/normalize.css"/>
                 <link rel="stylesheet" href="./css/skeleton.css"/>
                 <link rel="stylesheet" href="./css/master.css"/>
-                <link id="themeStyle" rel="stylesheet" href="./css/themes/grey.css"/>
                 <link rel="icon" type="image/png" href="images/favicon.png"/>
                 <script src="./javascript/jquery-3.3.1.min.js"></script>
                 <script src="./javascript/main.js" charset="utf-8"></script>
