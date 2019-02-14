@@ -44,23 +44,23 @@ function collapseNavigation() {
 
 function changePageContent(page) {
   $.ajax({
-    url: 'xslt/' + page + '.xhtml',
     success: function(data) {
-      //$('#content').html(data);
-      document.getElementById('content').innerHTML = data;
+      $body = $("#content");
+      $.get ('xslt/' + page + '.xhtml', function (data)
+      {
+          $body.html($(data).children());
+      }, 'xml');
     }
   });
-  console.log("Loaded page content " + page);
 }
 
 function init() {
-  console.log("init");
   var hash = window.location.hash;
   if (hash) {
     changePageContent(hash.replace("#", ""));
   }
   else {
-    changePageContent('home');
+    changePageContent('challenges');
   }
 }
 
