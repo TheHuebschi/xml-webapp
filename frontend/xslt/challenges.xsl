@@ -44,9 +44,9 @@
                 <div class="container">
                     <div class="topnav" id="myTopnav">
                     <a id="menu" onclick="collapseNavigation()">Menu</a>
-                    <a href="#home" onclick="changePageContent('home')">Home</a>
-                    <a href="#canvas" onclick="changePageContent('canvas')">Canvas</a>
-                    <a href="#formular" onclick="changePageContent('formular')">Formular</a>
+                    <a href="#home" onclick="changePageContent('home')">Challenges</a>
+                    <a href="#canvas" onclick="changePageContent('canvas')">Communities</a>
+                    <a href="#formular" onclick="changePageContent('formular')">Companies</a>
                     <a href="#about" onclick="changePageContent('about')">About</a>
                     <a href="javascript:void(0);" class="icon" onclick="collapseNavigation()">&#9776;</a>
                     </div>
