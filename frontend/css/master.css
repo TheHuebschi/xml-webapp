@@ -35,16 +35,25 @@ body {
 #headerBar {
   background-size:cover;
   background-image: url(../images/background.jpg);
-  color:white;
-  height: 160px;
+  height: 200px;
 }
 
 #navigationBar {
   background-color: #333;
 }
 
-.container {
-  /*margin-bottom: 24px;*/
+.column {
+  text-align: center;
+  margin-top: 35px;
+  background-color: white;
+  padding-top: 15px;
+  opacity: 0.8;
+}
+
+.column h1 {
+  opacity: 1.0;
+  color: black;
+  font-weight: bold;
 }
 
 .footer {
