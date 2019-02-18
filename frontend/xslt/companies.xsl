@@ -16,7 +16,7 @@
                 <h3>Home</h3>
                 <p>Willkommen auf meiner Webseite! Diese Seite dient als Testat-Aufgabe des Moduls WEBTEC. Klicke dich ruhig durch den One-Pager, es gibt spannenden Inhalt zu entdecken ...</p>
             </body>
-        <html>
+        </html>
     </xsl:template>
 
 </xsl:stylesheet>
