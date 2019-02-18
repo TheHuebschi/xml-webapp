@@ -44,6 +44,16 @@ function collapseNavigation() {
 
 function changePageContent(page) {
   $.ajax({
+    url: 'xslt/' + page + '.xhtml',
+    dataType: 'xslt'
+  }).done(function(result) {
+    $body = $("#content");
+    $body.html($(result).children());
+  });
+}
+
+/*function changePageContent(page) {
+  $.ajax({
     success: function(data) {
       $body = $("#content");
       $.get ('xslt/' + page + '.xhtml', function (data)
@@ -52,7 +62,7 @@ function changePageContent(page) {
       }, 'xml');
     }
   });
-}
+}*/
 
 function init() {
   var hash = window.location.hash;

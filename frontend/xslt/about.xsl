@@ -8,13 +8,11 @@
                 indent="yes" />
 
     <!-- variables to access the database XML files -->
-    <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
-
     <xsl:template match="/">
         <html>
             <body>
-                <h3>Companies</h3>
-                <p>Companies.xsl</p>
+                <h3>About</h3>
+                <p>About.xsl</p>
             </body>
         </html>
     </xsl:template>

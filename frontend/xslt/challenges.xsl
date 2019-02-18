@@ -8,14 +8,15 @@
                 indent="yes" />
 
     <!-- variables to access the database XML files -->
-    <xsl:variable name="challenges" select="document('../../database/challenges.xml')/challenges"/>
+    <xsl:variable name="companies" select="document('../../database/challenges.xml')/challenges"/>
 
     <xsl:template match="/">
-    
-        <h3>Home</h3>
-        <p>Willkommen auf meiner Webseite! Diese Seite dient als Testat-Aufgabe des Moduls WEBTEC. Klicke dich ruhig durch den One-Pager, es gibt spannenden Inhalt zu entdecken ...</p>
-
-
+        <html>
+            <body>
+                <h3>Challenges</h3>
+                <p>Challenges.xsl</p>
+            </body>
+        </html>
     </xsl:template>
 
 </xsl:stylesheet>

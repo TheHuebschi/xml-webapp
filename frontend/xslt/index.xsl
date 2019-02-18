@@ -24,6 +24,7 @@
                 <link rel="stylesheet" href="./css/master.css"/>
                 <link rel="icon" type="image/png" href="images/favicon.png"/>
                 <script src="./javascript/jquery-3.3.1.min.js"></script>
+                <script src="./javascript/jquery.ajax-xslt.js"></script>
                 <script src="./javascript/main.js" charset="utf-8"></script>
             </head>
             <body>
