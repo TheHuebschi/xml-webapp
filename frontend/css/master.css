@@ -34,26 +34,16 @@ body {
 
 #headerBar {
   background-size:cover;
-  background-image: url(../images/background.jpg);
-  height: 200px;
+  background-image: url(../images/Verwischt.jpg);
+  color:white;
 }
 
 #navigationBar {
   background-color: #333;
 }
 
-.column {
-  text-align: center;
-  margin-top: 35px;
-  background-color: white;
-  padding-top: 15px;
-  opacity: 0.8;
-}
-
-.column h1 {
-  opacity: 1.0;
-  color: black;
-  font-weight: bold;
+.container {
+  margin-bottom: 24px;
 }
 
 .footer {
