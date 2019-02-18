@@ -32,7 +32,7 @@
                 <div class="container">
                     <div class="row">
                     <div class="column">
-                        <h1>Community Challenge Website</h1>
+                        <h1 id="title">Community Challenge</h1>
                     </div>
                     </div>
                 </div>
