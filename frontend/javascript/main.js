@@ -42,38 +42,3 @@ function collapseNavigation() {
     }
 }
 
-function changePageContent(page) {
-  $.ajax({
-    url: 'xslt/' + page + '.xhtml',
-    dataType: 'xslt'
-  }).done(function(result) {
-    $body = $("#content");
-    $body.html($(result).children());
-  });
-}
-
-/*function changePageContent(page) {
-  $.ajax({
-    success: function(data) {
-      $body = $("#content");
-      $.get ('xslt/' + page + '.xhtml', function (data)
-      {
-          $body.html($(data).children());
-      }, 'xml');
-    }
-  });
-}*/
-
-function init() {
-  var hash = window.location.hash;
-  if (hash) {
-    changePageContent(hash.replace("#", ""));
-  }
-  else {
-    changePageContent('challenges');
-  }
-}
-
-$(document).ready(
-	init()
-)

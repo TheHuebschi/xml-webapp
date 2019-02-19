@@ -6,23 +6,54 @@
                 doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
-    
-    <!-- variables to access the database XML files -->
-    <xsl:variable name="companies" select="document('../database/companies.xml')/companies"/>
 
     <xsl:template match="/">
+    
         <html>
+            <head>
+                <meta charset="utf-8"/>
+                <title>Community Challenge</title>
+                <meta name="author" content="XML Project Team #3"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+                <link rel="stylesheet" href="../css/normalize.css"/>
+                <link rel="stylesheet" href="../css/skeleton.css"/>
+                <link rel="stylesheet" href="../css/master.css"/>
+                <link rel="icon" type="image/png" href="../images/favicon.png"/>
+                <script src="../javascript/jquery-3.3.1.min.js"></script>
+                <script src="../javascript/main.js" charset="utf-8"></script>
+            </head>
             <body>
-                <h3>Companies</h3>
-                <xsl:apply-templates select="$companies" />
+                <!-- Header -->
+                <div id="headerBar">
+                <div class="container">
+                    <div class="row">
+                    <div class="column">
+                        <h1 id="title">Community Challenge</h1>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Naviagtion -->
+                <div id="navigationBar">
+                    <div class="container">
+                        <div class="topnav" id="myTopnav">
+                        <a id="menu" onclick="collapseNavigation()">Menu</a>
+                        <a href="./home.xhtml">Home</a>
+                        <a href="./challenges.xhtml">Challenges</a>
+                        <a href="./communities.xhtml">Communities</a>
+                        <a href="./companies.xhtml">Companies</a>
+                        <a href="javascript:void(0);" class="icon" onclick="collapseNavigation()">&#9776;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="container" id="content">companies</div>
             </body>
         </html>
-    </xsl:template>
 
-    <xsl:template match="company">
-        <a>
-            <xsl:value-of select="name" />
-        </a>
     </xsl:template>
 
 </xsl:stylesheet>

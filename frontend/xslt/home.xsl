@@ -9,20 +9,19 @@
 
     <xsl:template match="/">
     
-        <html lang="en">
+        <html>
             <head>
                 <meta charset="utf-8"/>
-                <title>Community Challenge Website</title>
+                <title>Community Challenge</title>
                 <meta name="author" content="XML Project Team #3"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
-                <link rel="stylesheet" href="./css/normalize.css"/>
-                <link rel="stylesheet" href="./css/skeleton.css"/>
-                <link rel="stylesheet" href="./css/master.css"/>
-                <link rel="icon" type="image/png" href="images/favicon.png"/>
-                <script src="./javascript/jquery-3.3.1.min.js"></script>
-                <script src="./javascript/jquery.ajax-xslt.js"></script>
-                <script src="./javascript/main.js" charset="utf-8"></script>
+                <link rel="stylesheet" href="../css/normalize.css"/>
+                <link rel="stylesheet" href="../css/skeleton.css"/>
+                <link rel="stylesheet" href="../css/master.css"/>
+                <link rel="icon" type="image/png" href="../images/favicon.png"/>
+                <script src="../javascript/jquery-3.3.1.min.js"></script>
+                <script src="../javascript/main.js" charset="utf-8"></script>
             </head>
             <body>
                 <!-- Header -->
@@ -38,20 +37,20 @@
 
                 <!-- Naviagtion -->
                 <div id="navigationBar">
-                <div class="container">
-                    <div class="topnav" id="myTopnav">
-                    <a id="menu" onclick="collapseNavigation()">Menu</a>
-                    <a href="#challenges" onclick="changePageContent('challenges')">Challenges</a>
-                    <a href="#communities" onclick="changePageContent('communities')">Communities</a>
-                    <a href="#companies" onclick="changePageContent('companies')">Companies</a>
-                    <a href="#about" onclick="changePageContent('about')">About</a>
-                    <a href="javascript:void(0);" class="icon" onclick="collapseNavigation()">&#9776;</a>
+                    <div class="container">
+                        <div class="topnav" id="myTopnav">
+                        <a id="menu" onclick="collapseNavigation()">Menu</a>
+                        <a href="./home.xhtml">Home</a>
+                        <a href="./challenges.xhtml">Challenges</a>
+                        <a href="./communities.xhtml">Communities</a>
+                        <a href="./companies.xhtml">Companies</a>
+                        <a href="javascript:void(0);" class="icon" onclick="collapseNavigation()">&#9776;</a>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <!-- Content -->
-                <div class="container" id="content"></div>
+                <div class="container" id="content">Home</div>
             </body>
         </html>
 
