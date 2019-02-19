@@ -53,14 +53,34 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
-                    <xsl:apply-templates select="$companies" />
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Standort</th>
+                                <th>Anz. Mitarbeiter</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <xsl:apply-templates select="$companies" />
+                        </tbody>
+                    </table>
+                    <a class="button button-primary" href="#">Company hinzufügen</a>
                 </div>
             </body>
         </html>
 
     </xsl:template>
     <xsl:template match="company">
-        <xsl:value-of select="*" />
+        <tr>
+            <td><xsl:value-of select="@id" /></td>
+            <td><xsl:value-of select="name" /></td>
+            <td><xsl:value-of select="location" /></td>
+            <td><xsl:value-of select="numberOfEmployees" /></td>
+            <td><a class="button button-primary" href="#">></a></td>
+        </tr>
     </xsl:template>
 
 </xsl:stylesheet>
