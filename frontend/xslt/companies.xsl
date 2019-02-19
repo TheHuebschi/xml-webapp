@@ -7,6 +7,8 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
 
+     <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
+
     <xsl:template match="/">
     
         <html>
@@ -50,10 +52,15 @@
                 </div>
 
                 <!-- Content -->
-                <div class="container" id="content">companies</div>
+                <div class="container" id="content">
+                    <xsl:apply-templates select="$companies" />
+                </div>
             </body>
         </html>
 
+    </xsl:template>
+    <xsl:template match="company">
+        <xsl:value-of select="*" />
     </xsl:template>
 
 </xsl:stylesheet>

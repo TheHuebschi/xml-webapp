@@ -6,6 +6,8 @@
                 doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
+    
+ <xsl:variable name="communities" select="document('../../database/communities.xml')/communities"/>
 
     <xsl:template match="/">
     
@@ -50,10 +52,15 @@
                 </div>
 
                 <!-- Content -->
-                <div class="container" id="content">Communities</div>
+                <div class="container" id="content">
+                    <xsl:apply-templates select="$communities" />
+                </div>
             </body>
         </html>
 
+    </xsl:template>
+    <xsl:template match="community">
+        <xsl:value-of select="*" />
     </xsl:template>
 
 </xsl:stylesheet>
