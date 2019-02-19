@@ -7,7 +7,6 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
 
-    <!-- variables to access the database XML files -->
     <xsl:template match="/">
         <html>
             <body>

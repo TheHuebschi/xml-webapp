@@ -7,9 +7,6 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
 
-    <!-- variables to access the database XML files -->
-    <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
-
     <xsl:template match="/">
         <html>
             <body>
