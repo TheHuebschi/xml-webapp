@@ -3,6 +3,14 @@ body {
   overflow-y:scroll;
 }
 
+a {
+  text-decoration: none;
+}
+
+a.button {
+  margin-bottom:0px;
+  }
+
 .topnav {
   overflow: hidden;
   background-color: #333;
