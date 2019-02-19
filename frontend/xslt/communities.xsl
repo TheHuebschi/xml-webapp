@@ -7,6 +7,9 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
 
+    <!-- variables to access the database XML files -->
+    <xsl:variable name="communities" select="document('../../database/challenges.xml')/challenges"/>
+
     <xsl:template match="/">
         <html>
             <body>
