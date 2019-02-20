@@ -54,7 +54,7 @@
                 <!-- Content -->
                 <div class="container" id="content">
                     <h4>Communities</h4>
-                    <table class="u-full-width">
+                    <table id="communitiesTable" class="u-full-width">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -82,7 +82,7 @@
             <td><xsl:value-of select="location" /></td>
             <td><xsl:value-of select="size" /></td>
             <td><xsl:value-of select="description" /></td>
-            <td><a class="button button-primary" href="./communities_edit.xhtml">></a></td>
+            <td><a class="button button-primary" href="#">></a></td>
         </tr>
     </xsl:template>
 

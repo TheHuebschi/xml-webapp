@@ -42,3 +42,24 @@ function collapseNavigation() {
     }
 }
 
+init();
+
+function init(){
+  document.addEventListener('DOMContentLoaded', function() {
+    addCommunitiesTableRowHandler();
+  }, false);
+}
+
+function addCommunitiesTableRowHandler() {
+    if(document.getElementById("communitiesTable")!=null){
+        var table = document.getElementById("communitiesTable");
+        var rows = table.getElementsByTagName('tr');
+        for ( var i = 1; i < rows.length; i++) {
+            rows[i].i = i;
+            rows[i].onclick = function() {
+                window.location='./communities_edit.xhtml?id=' + table.rows[this.i].cells[0].innerHTML;
+            };
+        }
+    }
+}
+

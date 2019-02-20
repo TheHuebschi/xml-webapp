@@ -6,7 +6,7 @@
                 doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
-    
+
     <xsl:variable name="communities" select="document('../../database/communities.xml')/communities"/>
 
     <xsl:template match="/">
@@ -24,6 +24,7 @@
                 <link rel="icon" type="image/png" href="../images/favicon.png"/>
                 <script src="../javascript/jquery-3.3.1.min.js"></script>
                 <script src="../javascript/main.js"></script>
+                <script src="../javascript/communities_edit.js"></script>
             </head>
             <body>
                 <!-- Header -->
@@ -77,7 +78,7 @@
                         </div>
                         <label for="descriptionInput">Beschreibung:</label>
                         <textarea class="u-full-width" placeholder="Wir sind …" id="descriptionInput"></textarea>
-                        <input  type="submit" value="Abbrechen"/>
+                        <a class="button" href="./communities.xhtml">Abbrechen</a>
                         <input class="button-primary" type="submit" value="Speichern"/>
                     </form>
                 </div>
