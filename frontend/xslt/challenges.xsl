@@ -52,6 +52,7 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
+                    <h4>Challenges</h4>
                     <xsl:apply-templates select="$challenges" />
                 </div>
             </body>

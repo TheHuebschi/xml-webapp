@@ -9,7 +9,11 @@ a {
 
 a.button {
   margin-bottom:0px;
-  }
+}
+
+h4 {
+  margin-top: 2rem;
+}
 
 .topnav {
   overflow: hidden;

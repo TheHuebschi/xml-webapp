@@ -6,12 +6,12 @@
                 doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
-
-     <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
+    
+    <xsl:variable name="communities" select="document('../../database/communities.xml')/communities"/>
 
     <xsl:template match="/">
     
-        <html>
+        <html lang="en">
             <head>
                 <meta charset="utf-8"/>
                 <title>Community Challenge</title>
@@ -23,7 +23,7 @@
                 <link rel="stylesheet" href="../css/master.css"/>
                 <link rel="icon" type="image/png" href="../images/favicon.png"/>
                 <script src="../javascript/jquery-3.3.1.min.js"></script>
-                <script src="../javascript/main.js" charset="utf-8"></script>
+                <script src="../javascript/main.js"></script>
             </head>
             <body>
                 <!-- Header -->
@@ -53,37 +53,37 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
-                    <h4>Companies</h4>
-                    <table class="u-full-width">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Standort</th>
-                                <th>Anz. Mitarbeiter</th>
-                                <th>Beschreibung</th>
-                                <th>Bearbeiten</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <xsl:apply-templates select="$companies" />
-                        </tbody>
-                    </table>
-                    <a class="button button-primary" href="#">Company hinzufügen</a>
+                    <h4>Community bearbeiten/hinzufügen</h4>
+                    <form>
+                        <div class="row">
+                            <div class="six columns">
+                                <label for="nameInput">Name:</label>
+                                <input class="u-full-width" type="text" placeholder="Unsere Community" id="nameInput"/>
+                            </div>
+                            <div class="six columns">
+                                <label for="emailInput">Email:</label>
+                                <input class="u-full-width" type="email" placeholder="unsere@community.ch" id="emailInput"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="six columns">
+                                <label for="locationInput">Standort:</label>
+                                <input class="u-full-width" type="text" placeholder="Rotkreuz" id="locationInput"/>
+                            </div>
+                            <div class="six columns">
+                                <label for="sizeInput">Anzahl Mitglieder:</label>
+                                <input class="u-full-width" type="number" placeholder="3" id="sizeInput"/>
+                            </div>
+                        </div>
+                        <label for="descriptionInput">Beschreibung:</label>
+                        <textarea class="u-full-width" placeholder="Wir sind …" id="descriptionInput"></textarea>
+                        <input  type="submit" value="Abbrechen"/>
+                        <input class="button-primary" type="submit" value="Speichern"/>
+                    </form>
                 </div>
             </body>
         </html>
 
-    </xsl:template>
-    <xsl:template match="company">
-        <tr>
-            <td><xsl:value-of select="@id" /></td>
-            <td><xsl:value-of select="name" /></td>
-            <td><xsl:value-of select="location" /></td>
-            <td><xsl:value-of select="numberOfEmployees" /></td>
-            <td><xsl:value-of select="description" /></td>
-            <td><a class="button button-primary" href="#">></a></td>
-        </tr>
     </xsl:template>
 
 </xsl:stylesheet>

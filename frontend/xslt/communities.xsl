@@ -53,6 +53,7 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
+                    <h4>Communities</h4>
                     <table class="u-full-width">
                         <thead>
                             <tr>
@@ -60,14 +61,15 @@
                                 <th>Name</th>
                                 <th>Standort</th>
                                 <th>Anz. Mitglieder</th>
-                                <th>Details</th>
+                                <th>Beschreibung</th>
+                                <th>Bearbeiten</th>
                             </tr>
                         </thead>
                         <tbody>
                             <xsl:apply-templates select="$communities" />
                         </tbody>
                     </table>
-                    <a class="button button-primary" href="#">Coomunity hinzufügen</a>
+                    <a class="button button-primary" href="./communities_edit.xhtml">Comunity hinzufügen</a>
                 </div>
             </body>
         </html>
@@ -79,7 +81,8 @@
             <td><xsl:value-of select="name" /></td>
             <td><xsl:value-of select="location" /></td>
             <td><xsl:value-of select="size" /></td>
-            <td><a class="button button-primary" href="#">></a></td>
+            <td><xsl:value-of select="description" /></td>
+            <td><a class="button button-primary" href="./communities_edit.xhtml">></a></td>
         </tr>
     </xsl:template>
 
