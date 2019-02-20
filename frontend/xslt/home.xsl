@@ -51,7 +51,7 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
-                    Hello, <?php echo 'sdf'; ?>.
+                    Hello, <?php echo 'php'; ?>.
                     <h4>Hi Communities. Hi Companies. Hi everyone.</h4>
                     <h5>Hi Communities.</h5>
                     <p>Egal ob WG, Schrebbergarten oder Fan-Club – hier kann sich jede Community anmelden. Das Beste daran: Durch ausgeschriebene Challenges könnt ihr an kreativ werden! Ihr schiesst euer bestes Foto zur Challenge, beschreibt kurz warum genau eure Community gewinnen soll und schon könnt ihr tolle Preise gewinnen!</p>
