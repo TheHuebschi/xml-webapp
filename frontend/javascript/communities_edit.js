@@ -45,3 +45,29 @@ function getElementByXPath(xml, elementName){
     }
     return result;
 }
+
+function editCommunities() {
+    var nameInput = document.forms["editCommunitiesForm"]["nameInput"].value;
+    var emailInput = document.forms["editCommunitiesForm"]["emailInput"].value;
+    var locationInput = document.forms["editCommunitiesForm"]["locationInput"].value;
+    var sizeInput = document.forms["editCommunitiesForm"]["sizeInput"].value;
+    var descriptionInput = document.forms["editCommunitiesForm"]["descriptionInput"].value;
+    $.ajax({
+    url: '../php/communities_edit.php',
+    type: 'GET',
+    data: {function:'test',
+        'name': nameInput,
+        'email': emailInput,
+        'location': locationInput,
+        'size': sizeInput,
+        'description': descriptionInput
+    },
+    success: function(data) {
+        alert(data);
+    },
+    error: function(error) {
+        alert("eror" + error.Message);
+    }
+    });
+    return false;
+  }
