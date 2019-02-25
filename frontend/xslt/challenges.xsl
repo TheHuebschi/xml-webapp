@@ -53,14 +53,44 @@
                 <!-- Content -->
                 <div class="container" id="content">
                     <h4>Challenges</h4>
-                    <xsl:apply-templates select="$challenges" />
+                    <table id="challengeTable" class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Company</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <!--<th>Picture</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <xsl:apply-templates select="$challenges" />
+                        </tbody>
+                    </table>
+                    <!--<a class="button button-primary" href="./communities_edit.xhtml">Comunity hinzufügen</a> -->
                 </div>
             </body>
         </html>
 
     </xsl:template>
     <xsl:template match="challenge">
-        <xsl:value-of select="*" />
+        <tr>
+            <td><xsl:value-of select="@id" /></td>
+            <td><xsl:value-of select="@companyId" /></td>
+            <td><xsl:value-of select="title" /></td>
+            <td><xsl:value-of select="description" /></td>
+            <td><xsl:value-of select="price" /></td>
+            <td><a class="button button-primary" href="#">></a></td>
+        </tr>
+        <tr>
+            <td colspan="5"><xsl:apply-templates select="registrations" /></td>
+        </tr>
     </xsl:template>
+    <xsl:template match="registration">
+        <img src="{$challenges//registration/pictureLink}" alt="{$challenges//registration/pictureLink}" />
+        <!--<img src="{document('bond_movies_media.xml')/bond_movies/movie[@number=$id]/poster/@href}" alt="Selfhtml">-->
+    </xsl:template>
+
 
 </xsl:stylesheet>

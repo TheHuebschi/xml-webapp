@@ -93,6 +93,13 @@ h4 {
 	border: solid;
 }
 
+#challengeTable img{
+  max-height: 15%;
+  border: 1px solid black;
+  float: left;
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 550px) {
 	.topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -114,4 +121,5 @@ h4 {
     display: block;
     text-align: left;
   }
+
 }
