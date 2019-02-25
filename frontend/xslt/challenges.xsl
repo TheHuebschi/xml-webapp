@@ -81,14 +81,14 @@
             <td><xsl:value-of select="title" /></td>
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
-            <td><a class="button button-primary" href="javascript:showChallengePictures({@id});">pics</a></td>
+            <td><a class="button button-primary" href="javascript:showChallengePictures({@id});"><img src="../images/gallery-icon.png" /></a></td>
         </tr>
         <tr class="hiddenPictures" id="challengePictures{@id}">
             <td colspan="5"><xsl:apply-templates select="registrations" /></td>
         </tr>
     </xsl:template>
     <xsl:template match="registration">
-        <img src="{pictureLink}" alt="{pictureLink}" />
+        <img src="{pictureLink}" alt="{pictureLink}" class="challengeIMG" />
         <!--<img src="{document('bond_movies_media.xml')/bond_movies/movie[@number=$id]/poster/@href}" alt="Selfhtml">-->
     </xsl:template>
 
