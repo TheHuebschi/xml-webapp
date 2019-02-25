@@ -81,9 +81,9 @@
             <td><xsl:value-of select="title" /></td>
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
-            <td><a class="button button-primary" href="#">></a></td>
+            <td><a class="button button-primary" href="javascript:showChallengePictures();">></a></td>
         </tr>
-        <tr>
+        <tr class="challengePictures">
             <td colspan="5"><xsl:apply-templates select="registrations" /></td>
         </tr>
     </xsl:template>

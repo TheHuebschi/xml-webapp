@@ -93,6 +93,14 @@ h4 {
 	border: solid;
 }
 
+.challengePictures{
+  display: none;
+}
+
+.challengePicturesNotHidden{
+  display: block;
+}
+
 #challengeTable img{
   max-height: 15%;
   border: 1px solid black;

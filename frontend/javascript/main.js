@@ -42,6 +42,13 @@ function collapseNavigation() {
     }
 }
 
+function showChallengePictures() {
+  var elements = document.getElementsByClassName("challengePictures");
+  for(var i=0; i < elements.length; i++){
+    elements[i].className = "challengePicturesNotHidden";
+  }
+}
+
 init();
 
 function init(){
