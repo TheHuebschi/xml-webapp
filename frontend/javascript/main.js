@@ -42,11 +42,14 @@ function collapseNavigation() {
     }
 }
 
-function showChallengePictures() {
-  var elements = document.getElementsByClassName("challengePictures");
-  for(var i=0; i < elements.length; i++){
-    elements[i].className = "challengePicturesNotHidden";
+function showChallengePictures(id) {
+  var element = document.getElementById("challengePictures" + id);
+  if (element.className == "hiddenPictures"){
+    element.className = "notHiddenPictures";
+  } else{
+    element.className = "hiddenPictures";
   }
+
 }
 
 init();

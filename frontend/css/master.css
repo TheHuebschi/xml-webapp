@@ -93,12 +93,12 @@ h4 {
 	border: solid;
 }
 
-.challengePictures{
+.hiddenPictures{
   display: none;
 }
 
-.challengePicturesNotHidden{
-  display: block;
+.notHiddenPictures{
+  display: table-row;
 }
 
 #challengeTable img{
@@ -106,6 +106,9 @@ h4 {
   border: 1px solid black;
   float: left;
   margin-right: 5px;
+}
+#challengeTable a{
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 550px) {
