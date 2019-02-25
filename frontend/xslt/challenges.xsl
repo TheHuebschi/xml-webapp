@@ -88,7 +88,7 @@
         </tr>
     </xsl:template>
     <xsl:template match="registration">
-        <img src="{$challenges//registration/pictureLink}" alt="{$challenges//registration/pictureLink}" />
+        <img src="{pictureLink}" alt="{pictureLink}" />
         <!--<img src="{document('bond_movies_media.xml')/bond_movies/movie[@number=$id]/poster/@href}" alt="Selfhtml">-->
     </xsl:template>
 
