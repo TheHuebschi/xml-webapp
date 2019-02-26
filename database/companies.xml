@@ -6,4 +6,10 @@
         <location>Rothenburg</location>
         <numberOfEmployees>300</numberOfEmployees>
     </company>
+    <company id="2">
+        <name>Schnittlauch AG</name>
+        <description>TestText</description>
+        <location>Lauffeburg</location>
+        <numberOfEmployees>283</numberOfEmployees>
+    </company>
 </companies>

@@ -109,10 +109,13 @@ h4 {
 }
 
 .challengeIMG{
-  max-height: 25%;
+  max-height: 200px;
   border: 1px solid black;
-  float: left;
   margin-right: 5px;
+  margin-bottom: 5px;
+  display:inline-block;
+  vertical-align:middle;
+  align-items: center;
 }
 
 #challengeTable a{

@@ -7,6 +7,7 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
     <xsl:variable name="challenges" select="document('../../database/challenges.xml')/challenges"/>
+    <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
 
     <xsl:template match="/">
     
@@ -56,29 +57,29 @@
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Company</th>
                                 <th>Title</th>
+                                <th>Company</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <!--<th>Picture</th>-->
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <xsl:apply-templates select="$challenges" />
+                            <xsl:apply-templates select="$challenges/challenge">
+                                <xsl:sort select="title" data-type="text" order="ascending"/>
+                            </xsl:apply-templates>
                         </tbody>
                     </table>
-                    <!--<a class="button button-primary" href="./communities_edit.xhtml">Comunity hinzufügen</a> -->
                 </div>
             </body>
         </html>
 
     </xsl:template>
     <xsl:template match="challenge">
+        <xsl:variable name="companyIdForName" select="@companyId"/>
         <tr>
-            <td><xsl:value-of select="@id" /></td>
-            <td><xsl:value-of select="@companyId" /></td>
             <td><xsl:value-of select="title" /></td>
+            <td><xsl:value-of select="$companies/company[@id=$companyIdForName]/name" /></td>
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
             <td><a class="button button-primary" href="javascript:showChallengePictures({@id});"><img src="../images/gallery-icon.png" /></a></td>

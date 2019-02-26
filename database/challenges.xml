@@ -13,8 +13,8 @@
             </registration>
         </registrations>
     </challenge>
-    <challenge id="2" companyId="1">
-        <title>The 2nd Challenge</title>
+    <challenge id="2" companyId="2">
+        <title>A 2nd Challenge</title>
         <description>Which community cooks the best meal? - again</description>
         <price>CHF 2000.- Gutschein</price>
         <registrations>
@@ -29,6 +29,24 @@
                 <title>Die grösste Pizza</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://test1.stalder.rocks/img/picture_2.png</pictureLink>
+            </registration>
+            <registration communityId="1">
+                <date>17.03.2019</date>
+                <title>Test1</title>
+                <description>Desc1</description>
+                <pictureLink>https://www.wallpaper-gratis.eu/jahreszeiten/sommer/klatschmohn013_1024x768.jpg</pictureLink>
+            </registration>
+            <registration communityId="2">
+                <date>17.03.2019</date>
+                <title>Test2</title>
+                <description>Desc2</description>
+                <pictureLink>https://images7.alphacoders.com/685/685340.jpg</pictureLink>
+            </registration>
+            <registration communityId="2">
+                <date>17.03.2019</date>
+                <title>Test3</title>
+                <description>Desc3</description>
+                <pictureLink>https://wallpaperbrowse.com/media/images/601414_4vpoz8J_qIb1mwU.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>
