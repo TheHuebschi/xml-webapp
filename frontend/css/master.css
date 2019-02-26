@@ -102,14 +102,14 @@ h4 {
 }
 
 #challengeTable img{
-  height: 60%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .challengeIMG{
-  max-height: 15%;
+  max-height: 25%;
   border: 1px solid black;
   float: left;
   margin-right: 5px;
