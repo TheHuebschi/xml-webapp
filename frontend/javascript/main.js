@@ -43,11 +43,17 @@ function collapseNavigation() {
 }
 
 function showChallengePictures(id) {
+  
   var element = document.getElementById("challengePictures" + id);
   if (element.className == "hiddenPictures"){
+    Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
+      element.className = "hiddenPictures";
+    });
     element.className = "notHiddenPictures";
   } else{
-    element.className = "hiddenPictures";
+    Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
+      element.className = "hiddenPictures";
+    });
   }
 
 }

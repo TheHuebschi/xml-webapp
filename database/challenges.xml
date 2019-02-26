@@ -11,6 +11,12 @@
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
             </registration>
+            <registration communityId="2">
+                <date>15.02.2019</date>
+                <title>Das besten Magebrot</title>
+                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
+                <pictureLink>https://wallpaperbrowse.com/media/images/601414_4vpoz8J_qIb1mwU.jpg</pictureLink>
+            </registration>
         </registrations>
     </challenge>
     <challenge id="2" companyId="2">
@@ -34,7 +40,7 @@
                 <date>17.03.2019</date>
                 <title>Test1</title>
                 <description>Desc1</description>
-                <pictureLink>https://www.wallpaper-gratis.eu/jahreszeiten/sommer/klatschmohn013_1024x768.jpg</pictureLink>
+                <pictureLink>https://www.motorrad-bilder.at/slideshows/291/012758/bmw-motorrad-farben-2016-90.jpg</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>17.03.2019</date>

@@ -21,9 +21,11 @@
                 <link rel="stylesheet" href="../css/normalize.css"/>
                 <link rel="stylesheet" href="../css/skeleton.css"/>
                 <link rel="stylesheet" href="../css/master.css"/>
+                <link rel="stylesheet" href="../css/w3.css" />
                 <link rel="icon" type="image/png" href="../images/favicon.png"/>
                 <script src="../javascript/jquery-3.3.1.min.js"></script>
                 <script src="../javascript/main.js" charset="utf-8"></script>
+                <script src="../javascript/slider.js"></script>
             </head>
             <body>
                 <!-- Header -->
@@ -82,15 +84,26 @@
             <td><xsl:value-of select="$companies/company[@id=$companyIdForName]/name" /></td>
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
-            <td><a class="button button-primary" href="javascript:showChallengePictures({@id});"><img src="../images/gallery-icon.png" /></a></td>
+            <td>
+                <a class="button button-primary" href="javascript:showChallengePictures({@id});showDivs(1,{@id});resetSlideIndex();">
+                    <img src="../images/gallery-icon.png" class="galleryIcon" />
+                </a>
+            </td>
         </tr>
         <tr class="hiddenPictures" id="challengePictures{@id}">
-            <td colspan="5"><xsl:apply-templates select="registrations" /></td>
+            <td colspan="5">
+                <div class="w3-content w3-display-container" style="width: 80%;">
+                    <div class="galleryDiv galleryDiv{@id}">
+                        <xsl:apply-templates select="registrations" />
+                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1,{@id})">&#10094;</button>
+                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, {@id})">&#10095;</button>
+                    </div>
+                </div>
+            </td>
         </tr>
     </xsl:template>
     <xsl:template match="registration">
-        <img src="{pictureLink}" alt="{pictureLink}" class="challengeIMG" />
-        <!--<img src="{document('bond_movies_media.xml')/bond_movies/movie[@number=$id]/poster/@href}" alt="Selfhtml">-->
+        <img src="{pictureLink}" alt="{pictureLink}" class="challengeIMG mySlides" />
     </xsl:template>
 
 

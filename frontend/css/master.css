@@ -101,20 +101,26 @@ h4 {
   display: table-row;
 }
 
-#challengeTable img{
+.galleryIcon{
   height: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .challengeIMG{
-  max-height: 200px;
-  border: 1px solid black;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  display:inline-block;
-  vertical-align:middle;
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.galleryDiv{
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 500px;
+  display: flex; 
+  justify-content: center; 
   align-items: center;
 }
 
