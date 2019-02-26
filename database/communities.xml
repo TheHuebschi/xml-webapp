@@ -1,10 +1,31 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <communities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="communities.xsd">
     <community id="1">
         <name>Best WG</name>
-        <description>asdfsd ökasdf</description>
+        <description>asdfsd &#xF6;kasdf</description>
         <size>3</size>
         <location>Rotkreuz</location>
         <mail>contact@mywg.ch</mail>
     </community>
-</communities>
+    <community id="2">
+        <name>Best WG2</name>
+        <description>asdfsd &#xF6;kasdf</description>
+        <size>3</size>
+        <location>Rotkreuz</location>
+        <mail>contact@mywg.ch</mail>
+    </community>
+    <community id="3">
+        <name>ysdv</name>
+        <description>asdfsdf</description>
+        <size>3</size>
+        <location>asdf</location>
+        <mail>claudio.huebscher@hotmail.com</mail>
+    </community>
+    <community id="4">
+        <name>ysdv</name>
+        <description>asdfsdf</description>
+        <size>3</size>
+        <location>asdf</location>
+        <mail>claudio.huebscher@hotmail.com</mail>
+    </community>
+<community id="5"><name>asdgsdgfhfgh</name><description>fhsfgh</description><size>34</size><location>sfgh</location><mail>asdgf@asdf.df</mail></community><community id="6"><name>asdgsdgfhfgh</name><description>fhsfgh</description><size>34</size><location>sfgh</location><mail>asdgf@asdf.df</mail></community><community id="7"><name>asdgsdgfhfgh</name><description>fhsfgh</description><size>34</size><location>sfgh</location><mail>asdgf@asdf.df</mail></community></communities>

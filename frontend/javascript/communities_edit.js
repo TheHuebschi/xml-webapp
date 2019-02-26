@@ -47,6 +47,7 @@ function getElementByXPath(xml, elementName){
 }
 
 function editCommunities() {
+    var idInput = getUrlVars()["id"];
     var nameInput = document.forms["editCommunitiesForm"]["nameInput"].value;
     var emailInput = document.forms["editCommunitiesForm"]["emailInput"].value;
     var locationInput = document.forms["editCommunitiesForm"]["locationInput"].value;
@@ -56,6 +57,7 @@ function editCommunities() {
     url: '../php/communities_edit.php',
     type: 'POST',
     data: {
+        'id': idInput,
         'name': nameInput,
         'email': emailInput,
         'location': locationInput,
