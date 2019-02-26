@@ -54,8 +54,8 @@ function editCommunities() {
     var descriptionInput = document.forms["editCommunitiesForm"]["descriptionInput"].value;
     $.ajax({
     url: '../php/communities_edit.php',
-    type: 'GET',
-    data: {function:'test',
+    type: 'POST',
+    data: {
         'name': nameInput,
         'email': emailInput,
         'location': locationInput,
