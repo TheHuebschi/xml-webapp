@@ -11,6 +11,7 @@
 
     if (empty($id)) {
         $id = getNextFreeId($xml);
+        echo "Next id:" + $id;
         addCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     else {
@@ -33,8 +34,12 @@
     function getNextFreeId($xml) {
         $xPathQuery = '//@id';
         $results = $xml->xpath($xPathQuery);
-        sort($results);
-        return $results[0] + 1;
+        rsort($results);
+        
+        foreach ($results as $result) {
+            echo $result + "";
+        }
+        return $results[count($results)-1] + 1;
     }
 
     function addCommunity($xml, $id, $name, $email, $location, $size, $description) {

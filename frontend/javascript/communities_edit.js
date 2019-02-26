@@ -67,8 +67,8 @@ function editCommunities() {
     success: function(data) {
         alert(data);
     },
-    error: function(error) {
-        alert("eror" + error.Message);
+    error: function(data) {
+        alert("error");
     }
     });
     return false;
