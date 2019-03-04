@@ -85,7 +85,7 @@
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
             <td>
-                <a class="button button-primary" href="javascript:showChallengePictures({@id});showDivs(1,{@id});resetSlideIndex();">
+                <a class="button button-primary" href="javascript:resetSlideIndex();showChallengePictures({@id});showDivs(1,{@id});">
                     <img src="../images/gallery-icon.png" class="galleryIcon" />
                 </a>
             </td>
