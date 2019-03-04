@@ -51,10 +51,9 @@
 
                 <!-- Content -->
                 <div class="container" id="content">
-                    Hello, <?php echo 'php'; ?>.
                     <h4>Hi Communities. Hi Companies. Hi everyone.</h4>
                     <h5>Hi Communities.</h5>
-                    <p>Egal ob WG, Schrebbergarten oder Fan-Club – hier kann sich jede Community anmelden. Das Beste daran: Durch ausgeschriebene Challenges könnt ihr an kreativ werden! Ihr schiesst euer bestes Foto zur Challenge, beschreibt kurz warum genau eure Community gewinnen soll und schon könnt ihr tolle Preise gewinnen!</p>
+                    <p>Egal ob WG, Schrebbergarten oder Fan-Club – hier kann sich jede Community anmelden. Das Beste daran: Durch ausgeschriebene Challenges könnt ihr kreativ werden! Ihr schiesst euer bestes Foto zur Challenge, beschreibt kurz warum genau eure Community gewinnen soll und schon könnt ihr tolle Preise gewinnen!</p>
                     <p>Einfach <a href="./communities_edit.xhtml">hier</a> registrieren und sofort <a href="./challenges.xhtml">teilnehmen</a>!</p>
                     <h5>Hi Companies.</h5>
                     <p>Ihr wollt eure Produkte und/oder Dienstleistungen einer Communities näherbringen? Dann seid ihr hier goldrichtig! Schreibt coole Challenges aus und erhaltet innerhalb kurzer Zeit die ersten Registrierungen. Ihr werdet schlussendlich aus einer Vielzahl von Einreichungen die Gewinner-Community küren. Es warten tolle Bilder, emotionale Begründungen und zeitnahe Feedbacks auf euch!</p>

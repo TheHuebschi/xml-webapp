@@ -66,10 +66,24 @@ function editCommunities() {
     },
     success: function(data) {
         alert(data);
+        success();
     },
     error: function(data) {
-        alert("error");
+        error();
     }
     });
     return false;
+  }
+
+  function success() {
+    swal({
+        title: "Fehler!",
+        text: "Bitte gib mir deine Anrede an!",
+        icon: "error",
+        button: "Jetzt fixen!",
+      });
+  }
+
+  function error() {
+    alert("error");
   }

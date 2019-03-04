@@ -11,7 +11,7 @@
 
     if (empty($id)) {
         $id = getNextFreeId($xml);
-        echo "Next id:" + $id;
+        echo "Next id:" + "$id";
         addCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     else {
@@ -53,8 +53,11 @@
     }
 
     function editCommunity($xml, $id, $name, $email, $location, $size, $description) {
-        $character = $xml->addChild('prof', 'Thomas Koller');
-        $character->addAttribute('teaches', 'swe');
+        $xPathQuery = '//community[@id="' + $id + '"]';
+        $communityById = $xml->xpath($xPathQuery)->item(0);
+        
+        $name = $communityById->getElementsByTagName('name')->item(0)->nodeValue;
+        echo "Hier ist der Name aus dem XML: " + $name + "";
     }
 
     function persistXML($path, $xml) {
@@ -87,12 +90,4 @@
     function removeTempXML() {
         unlink('../../database/communities_temp.xml');
     }
-
-    //printXML($xml);
-
-    //function printXML($xml) {
-    //    foreach ($xml->community as $community) {
-    //        echo $community, ' id: ', $community['id'], '<br />';
-    //    }
-    //}
 ?>
