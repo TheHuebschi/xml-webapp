@@ -5,17 +5,14 @@
     $location = htmlspecialchars($_POST["location"]);
     $size = htmlspecialchars($_POST["size"]);
     $description = htmlspecialchars($_POST["description"]);
-    echo "Id: $id, Name: $name, Email: $email, Location: $location, Size: $size, Description: $description.\n";
-
+    
     $xml = simplexml_load_file('../../database/communities.xml');
 
     if (empty($id)) {
         $id = getNextFreeId($xml);
-        echo "Next id:" + "$id";
         addCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     else {
-        echo "Community: ";
         editCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     
@@ -35,9 +32,6 @@
         $results = $xml->xpath($xPathQuery);
         rsort($results);
         
-        foreach ($results as $result) {
-            echo $result + "";
-        }
         return $results[count($results)-1] + 1;
     }
 
@@ -70,12 +64,12 @@
         $data = file_get_contents('../../database/communities_temp.xml');
         $xml = new DOMDocument();
         $xml->loadXML($data);
-        // disable error output to client
+
         libxml_use_internal_errors(true);
-        // validate against schema
+        
         $xsd = '../../database/communities.xsd';
         $result = $xml->schemaValidate($xsd);
-        // show errors
+        
         if (!$result) {
             return false;
         }

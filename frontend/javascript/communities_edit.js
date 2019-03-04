@@ -64,12 +64,10 @@ function editCommunities() {
         'size': sizeInput,
         'description': descriptionInput
     },
-    success: function(data) {
-        alert(data);
+    success: function() {
         success();
     },
-    error: function(data) {
-        alert(data);
+    error: function() {
         error();
     }
     });
