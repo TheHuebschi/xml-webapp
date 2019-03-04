@@ -15,21 +15,21 @@
         addCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     else {
-        editCommunity($xml, $id, $name, $email, $location, $size, $description);
+        echo "Community: ";
+        echo editCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     
     persistXML('../../database/communities_temp.xml', $xml);
     
-    if (validateXML()) {
-        echo "true";
+    /*if (validateXML()) {
         replaceXML();
         removeTempXML();
         http_response_code(200);
     } else {
-        echo "false";
         removeTempXML();
-        http_response_code(500);
-    }
+        http_response_code(200);
+        //http_response_code(500);
+    }*/
 
     function getNextFreeId($xml) {
         $xPathQuery = '//@id';
@@ -53,11 +53,17 @@
     }
 
     function editCommunity($xml, $id, $name, $email, $location, $size, $description) {
-        $xPathQuery = '//community[@id="' + $id + '"]';
-        $communityById = $xml->xpath($xPathQuery)->item(0);
+        $xPathQuery = '//community[@id="' . "$id" . '"]/name';
+        $communitiesById = $xml->xpath($xPathQuery)[0];
+
         
-        $name = $communityById->getElementsByTagName('name')->item(0)->nodeValue;
-        echo "Hier ist der Name aus dem XML: " + $name + "";
+        
+        $resultText = $communitiesById;
+        /*foreach ($communitiesById as $result) {
+            $resultText = $result;
+        }*/
+
+        return $resultText;
     }
 
     function persistXML($path, $xml) {

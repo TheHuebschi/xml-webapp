@@ -69,6 +69,7 @@ function editCommunities() {
         success();
     },
     error: function(data) {
+        alert(data);
         error();
     }
     });
@@ -77,13 +78,18 @@ function editCommunities() {
 
   function success() {
     swal({
-        title: "Fehler!",
-        text: "Bitte gib mir deine Anrede an!",
-        icon: "error",
-        button: "Jetzt fixen!",
+        title: "Geschafft!",
+        text: "Deine Community wurde erfolgreich hinzugefügt/angepasst!",
+        icon: "success",
+        button: "Weiter entdecken!",
       });
   }
 
   function error() {
-    alert("error");
+    swal({
+        title: "Oh oh!",
+        text: "Die Eingaben konnten nicht erfolgreich validiert werden!",
+        icon: "error",
+        button: "Jetzt fixen!",
+      });
   }
