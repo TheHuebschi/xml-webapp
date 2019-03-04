@@ -16,20 +16,19 @@
     }
     else {
         echo "Community: ";
-        echo editCommunity($xml, $id, $name, $email, $location, $size, $description);
+        editCommunity($xml, $id, $name, $email, $location, $size, $description);
     }
     
     persistXML('../../database/communities_temp.xml', $xml);
     
-    /*if (validateXML()) {
+    if (validateXML()) {
         replaceXML();
         removeTempXML();
         http_response_code(200);
     } else {
         removeTempXML();
-        http_response_code(200);
-        //http_response_code(500);
-    }*/
+        http_response_code(500);
+    }
 
     function getNextFreeId($xml) {
         $xPathQuery = '//@id';
@@ -53,17 +52,14 @@
     }
 
     function editCommunity($xml, $id, $name, $email, $location, $size, $description) {
-        $xPathQuery = '//community[@id="' . "$id" . '"]/name';
-        $communitiesById = $xml->xpath($xPathQuery)[0];
+        $xPathQuery = '//community[@id="' . "$id" . '"]';
+        $community = $xml->xpath($xPathQuery)[0];
 
-        
-        
-        $resultText = $communitiesById;
-        /*foreach ($communitiesById as $result) {
-            $resultText = $result;
-        }*/
-
-        return $resultText;
+        $community->name = $name;
+        $community->mail = $email;
+        $community->location = $location;
+        $community->size = $size;
+        $community->description = $description;
     }
 
     function persistXML($path, $xml) {
