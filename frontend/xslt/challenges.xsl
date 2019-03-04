@@ -26,6 +26,7 @@
                 <script src="../javascript/jquery-3.3.1.min.js"></script>
                 <script src="../javascript/main.js" charset="utf-8"></script>
                 <script src="../javascript/slider.js"></script>
+                <script src="../javascript/ie-arrayfrom.js"></script>
             </head>
             <body>
                 <!-- Header -->
