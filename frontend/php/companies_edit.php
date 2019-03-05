@@ -2,7 +2,7 @@
     $id = htmlspecialchars($_POST["id"]);
     $name = htmlspecialchars($_POST["name"]);
     $location = htmlspecialchars($_POST["location"]);
-    $size = htmlspecialchars($_POST["numberOfEmployees"]);
+    $numberOfEmployees = htmlspecialchars($_POST["numberOfEmployees"]);
     $description = htmlspecialchars($_POST["description"]);
     
     $xml = simplexml_load_file('../../database/companies.xml');
