@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Challenge ausschreiben</title>
+        <meta name="author" content="XML Project Team #3" />
+        <link rel="stylesheet" href="../css/normalize.css" />
+        <link rel="stylesheet" href="../css/skeleton.css" />
+        <link rel="stylesheet" href="../css/master.css" />
+        <link rel="icon" type="image/png" href="../images/favicon.png" />
+        <script src="../javascript/jquery-3.3.1.min.js"></script>
+        <script src="../javascript/sweetalert.min.js"></script>
+        <script src="../javascript/main.js"></script>
+        <script src="../javascript/communities_edit.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div id="headerBar">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <h1 id="title">Challenges</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Naviagtion -->
+        <div id="navigationBar">
+            <div class="container">
+                <div class="topnav" id="myTopnav">
+                    <a id="menu" onclick="collapseNavigation()">Menu</a>
+                    <a href="./home.xhtml">Home</a>
+                    <a href="./challenges.xhtml">Challenges</a>
+                    <a href="./communities.xhtml">Communities</a>
+                    <a href="./companies.xhtml">Companies</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="content">
+            <h4>Bewerbung Einreichen</h4>
+
+            <form action="../upload.php" method="post" enctype="multipart/form-data">
+
+                <div class="row">
+                    <label for="nameInput">Name/Vorname</label>
+                    <input class="u-full-width" type="text" id="nameInput" />
+                </div>
+
+                <div class="row">
+                    <label>Select image to upload:</label>
+                    <input type="file" name="fileToUpload" id="fileToUpload" /> 
+                    <!-- <label> <input type="submit" value="Upload Image" name="submit"> </label> -->
+                </div>
+
+
+                <div class="row">
+                    <label for="descriptionInput">Wer bin ich?</label>
+                    <textarea class="u-full-width" placeholder="why me...." id="descriptionInput"></textarea>
+                </div>
+
+
+                <a class="button" href="./challenges.xhtml">Abbrechen</a>
+                <input class="button-primary" type="submit" value="Speichern" name="submit" />
+
+            </form>
+        </div>
+    </body>
+
+</html>
