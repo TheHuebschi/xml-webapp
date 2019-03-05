@@ -7,13 +7,13 @@
         <registrations>
             <registration communityId="1">
                 <date>15.02.2019</date>
-                <title>Das besten Magebrot</title>
+                <title>1Das besten Magebrot</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>15.02.2019</date>
-                <title>Das besten Magebrot</title>
+                <title>2Das besten Magebrot</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://db-service.toubiz.de/var/plain_site/storage/images/orte/zermatt/gornergrat/gornergrat/1151395-1-ger-DE/gornergrat_front_large.jpg</pictureLink>
             </registration>
@@ -26,31 +26,31 @@
         <registrations>
             <registration communityId="1">
                 <date>15.03.2019</date>
-                <title>Das besten Magebrot</title>
+                <title>1Das besten Magebrot</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>17.03.2019</date>
-                <title>Die grösste Pizza</title>
+                <title>2Die grösste Pizza</title>
                 <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
                 <pictureLink>https://test1.stalder.rocks/img/picture_2.png</pictureLink>
             </registration>
             <registration communityId="1">
                 <date>17.03.2019</date>
-                <title>Test1</title>
+                <title>3Test1</title>
                 <description>Desc1</description>
                 <pictureLink>https://www.motorrad-bilder.at/slideshows/291/012758/bmw-motorrad-farben-2016-90.jpg</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>17.03.2019</date>
-                <title>Test2</title>
+                <title>4Test2</title>
                 <description>Desc2</description>
                 <pictureLink>https://images7.alphacoders.com/685/685340.jpg</pictureLink>
             </registration>
             <registration communityId="2">
                 <date>17.03.2019</date>
-                <title>Test3</title>
+                <title>5sTest3</title>
                 <description>Desc3</description>
                 <pictureLink>https://db-service.toubiz.de/var/plain_site/storage/images/orte/zermatt/gornergrat/gornergrat/1151395-1-ger-DE/gornergrat_front_large.jpg</pictureLink>
             </registration>

@@ -10,8 +10,8 @@ function resetSlideIndex(){
 
 function showDivs(n, challengeID) {
   var i;
-  //var x = document.getElementsByClassName("mySlides");
   var x = document.querySelectorAll(".galleryDiv" + challengeID + " .challengeIMG");
+  var y = document.querySelectorAll(".galleryDiv" + challengeID + " .challengeIMGOverlay");
 
   if (n > x.length){
     slideIndex = 1
@@ -21,6 +21,10 @@ function showDivs(n, challengeID) {
   }
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none"; 
+    y[i].style.display = "none"; 
   }
   x[slideIndex-1].style.display = "block"; 
+  y[slideIndex-1].style.display = "block"; 
+ 
+
 }
