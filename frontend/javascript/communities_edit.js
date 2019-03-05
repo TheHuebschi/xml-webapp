@@ -28,7 +28,7 @@ function loadCommunity(xml) {
     document.getElementById("descriptionInput").value = getElementByXPath(xml, "description");
     document.getElementById("sizeInput").value = getElementByXPath(xml, "size");
     document.getElementById("locationInput").value = getElementByXPath(xml, "location");
-    document.getElementById("emailInput").value = getElementByXPath(xml, "mail");
+    document.getElementById("emailInput").value = getElementByXPath(xml, "email");
 }
 
 function getElementByXPath(xml, elementName){
