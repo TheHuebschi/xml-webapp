@@ -57,6 +57,7 @@
                     <table id="communitiesTable" class="u-full-width">
                         <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Standort</th>
                                 <th>Anz. Mitglieder</th>
@@ -76,6 +77,7 @@
     </xsl:template>
     <xsl:template match="community">
         <tr>
+            <td><xsl:value-of select="@id" /></td>
             <td><xsl:value-of select="name" /></td>
             <td><xsl:value-of select="location" /></td>
             <td><xsl:value-of select="size" /></td>
