@@ -42,7 +42,7 @@
         $community->addChild('description', $description);
         $community->addChild('size', $size);
         $community->addChild('location', $location);
-        $community->addChild('mail', $email);
+        $community->addChild('email', $email);
     }
 
     function editCommunity($xml, $id, $name, $email, $location, $size, $description) {
@@ -50,7 +50,7 @@
         $community = $xml->xpath($xPathQuery)[0];
 
         $community->name = $name;
-        $community->mail = $email;
+        $community->email = $email;
         $community->location = $location;
         $community->size = $size;
         $community->description = $description;
