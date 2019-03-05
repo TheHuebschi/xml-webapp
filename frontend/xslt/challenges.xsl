@@ -58,7 +58,7 @@
                 <div class="container" id="content">
                     <h4>Challenges</h4>
                     <a class="button button-primary" href="http://www.google.ch">Bewerbung einreichen</a>
-                    <a class="button button-primary" id="challenge-button" href="http://www.google.ch">Challenge ausschreiben</a>
+                    <a class="button button-primary challenge-button" href="http://www.google.ch">Challenge ausschreiben</a>
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>
