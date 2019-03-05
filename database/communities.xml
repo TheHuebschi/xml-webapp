@@ -1,31 +1,45 @@
 <?xml version="1.0"?>
 <communities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="communities.xsd">
     <community id="1">
-        <name>Best WG</name>
-        <description>asdfsd &#xF6;kasdf</description>
+        <name>Handwerker WG Baselstrasse</name>
+        <description>Wir sind drei männliche Handwerker, welche in der Baselstrasse, Luzern eine kleine aber feine WG eingerichtet haben. Zu dritt haben wir mit unseren Kochkünsten schon einige Frauen verzaubert!</description>
         <size>3</size>
-        <location>Rotkreuz</location>
-        <email>contact@mywg.ch</email>
+        <location>Baselstrasse, Luzern</location>
+        <email>peter.weiss@bluewin.ch</email>
     </community>
     <community id="2">
-        <name>Best WG2</name>
-        <description>asdfsd &#xF6;kasdf</description>
-        <size>3</size>
-        <location>Rotkreuz</location>
-        <email>contact@mywg.ch</email>
+        <name>Zukünftige Lehrerinnen United</name>
+        <description>Insgesammt sind wir vier angehende Lehrerinnen in den 20ern. Wir schmeissen unsere kunterbunte WG nun bereits das dritte Jahr und verstehen uns immer noch super!</description>
+        <size>4</size>
+        <location>Bahnhofstrasse, Luzern</location>
+        <email>nadja.nötzli@stud.phlu.ch</email>
     </community>
     <community id="3">
-        <name>ysdv</name>
-        <description>asdfsdf</description>
-        <size>3</size>
-        <location>asdf</location>
-        <email>claudio.huebscher@hotmail.com</email>
+        <name>Schrebergarten Sedel</name>
+        <description>Wir sind die grösste Schrebergarten-Vereinigung der Stadt Luzern und trotzdem kommt es bei uns alles andere als auf die Grösse drauf an; Jegliche Gärten werden von unseren Mitlgiedern penibel gehegt und gepflegt.</description>
+        <size>120</size>
+        <location>Sedel, Luzern</location>
+        <email>paul.waser@sglu.ch</email>
     </community>
     <community id="4">
-        <name>ysdv</name>
-        <description>asdfsdf</description>
-        <size>3</size>
-        <location>asdf</location>
-        <email>claudio.huebscher@hotmail.com</email>
+        <name>Gartenareal Allmend</name>
+        <description>Bei uns sind nicht nur die schönsten Gärten zu bestaunen. Es gibt auch das wunderschöne Bergpanorama Richtung Stanserhorn, Pilatus und Buochserhorn zu betrachten.</description>
+        <size>75</size>
+        <location>Allmend, Luzern</location>
+        <email>sepp.steiner@fgvluzern.ch</email>
     </community>
-<community id="5"><name>Joun Chamas</name><description>Test</description><size>3</size><location>Zug</location><email>joun.chamas@stud.hslu.com</email></community><community id="6"><name>Schnabeltier</name><description>Trampolin</description><size>5</size><location>Uganda</location><email>saltimbocca@schinke.ch</email></community></communities>
+    <community id="5">
+        <name>Schrebergarten Eichli</name>
+        <description>Uns ist wichtig, dass wir nicht nur das freundschaftliche Verhältnis zwischen unseren Mitgliedern pflegen, sondern auch dass wir den Ausbau mit dem Einklang der Natur vornehmen.</description>
+        <size>90</size>
+        <location>Eichli, Stans</location>
+        <email>christoph.mathis@nw.ch</email>
+    </community>
+    <community id="6">
+        <name>Gebrüder Gabriel</name>
+        <description>Seit unserer Geburt sind wir drei nun vereint. Wir sind nähmlich drei Brüder die gemeinsam in einer WG in Beckenried (NW) wohnen. Und ja, auch bei und kann es öfters mal krachen.</description>
+        <size>3</size>
+        <location>Beckenried</location>
+        <email>stefan.gabriel@gmail.com</email>
+    </community>
+</communities>

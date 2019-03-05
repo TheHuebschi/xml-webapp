@@ -1,58 +1,65 @@
 <?xml version="1.0" ?>
 <challenges xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="challenges.xsd">
     <challenge id="1" companyId="1">
-        <title>Best Meal Challenge</title>
-        <description>Which community cooks the best meal?</description>
-        <price>CHF 1000.- Gutschein</price>
+        <title>Bester Köttbullar-Teller Challenge</title>
+        <description>Unsere Köttbullar sind weltberühmt und es freut uns, dass einige Kunden nur wegen dieser schwedischen Mahlzeit unseren Store besuchen. Aus diesem Grund suchen wir DIE WG, welche uns den kreativsten Köttbullar-Teller kocht. Die einzige Vorgabe ist die Verwendung unserer Original Köttbullar. Wer weiss, vielleicht beglücken wir schon bald eure WG mit einem IKEA-Einkaufsgutschein im Wert von CHF 2000.-</description>
+        <price>CHF 2000.- IKEA-Einkaufsgutschein</price>
         <registrations>
-            <registration communityId="1">
-                <date>15.02.2019</date>
-                <title>1Das besten Magebrot</title>
-                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
-                <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
-            </registration>
             <registration communityId="2">
-                <date>15.02.2019</date>
-                <title>2Das besten Magebrot</title>
-                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
-                <pictureLink>https://db-service.toubiz.de/var/plain_site/storage/images/orte/zermatt/gornergrat/gornergrat/1151395-1-ger-DE/gornergrat_front_large.jpg</pictureLink>
+                <date>05.03.2019</date>
+                <title>Kochen? Kreativ? Die perfekte Aufgabe für uns!</title>
+                <description>Wir beweisen euch, dass es nur ein Team gibt, welches dieser Challenge gewachsen ist und dies mit purer Girl-Power!</description>
+                <pictureLink>../../database/images/1_2.jpg</pictureLink>
+            </registration>
+            <registration communityId="1">
+                <date>06.03.2019</date>
+                <title>Die Kochkünste der Handwerker</title>
+                <description>Was vielleicht nicht ganz offensichtlich ist: In uns stecken die leidenschaftlichsten Köche der Stadt Luzern.</description>
+                <pictureLink>../../database/images/1_1.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>
     <challenge id="2" companyId="2">
-        <title>A 2nd Challenge</title>
-        <description>Which community cooks the best meal? - again</description>
-        <price>CHF 2000.- Gutschein</price>
+        <title>Schönster Schrebergarten der Zentralschweiz</title>
+        <description>OBI will sich innerhalb der Zentralschweiz positionieren und sucht aus diesem Grund den schönsten Schrebergarten der Zentralschweiz. Als Gewinn gibt es fünf 6m Palmen aus Italien für den Gewinner-Schrebergarten. Zusätzlich wird sich mit der Wahl des Gewinners entscheiden in welchem Kanton sich die erste OBI-Filiale der Zentralschweiz befinden wird.</description>
+        <price>5x 6m Palmen aus Italien</price>
         <registrations>
-            <registration communityId="1">
-                <date>15.03.2019</date>
-                <title>1Das besten Magebrot</title>
-                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
-                <pictureLink>https://test1.stalder.rocks/img/picture_1.png</pictureLink>
+            <registration communityId="3">
+                <date>01.03.2019</date>
+                <title>DER schönste Schrebergarten der Zentralschweiz</title>
+                <description>Für die Challenge zählen zwar nur zentralschweizer Schrebergärten, wir beweisen OBI aber, dass wir der schönste Schrebergarten der gesamten Schweiz sind!</description>
+                <pictureLink>../../database/images/2_3.jpg</pictureLink>
             </registration>
+            <registration communityId="4">
+                <date>02.03.2019</date>
+                <title>Die schönste Aussicht gewinnt? Dann gibts nur uns!</title>
+                <description>Die schönste Aussicht auf das Zentralschweizer Bergpanorama gibt es ausschliesslich in unserem Schrebergarten. Nur schon deswegen werden wir sowas von gewinnen.</description>
+                <pictureLink>../../database/images/2_4.jpg</pictureLink>
+            </registration>
+            <registration communityId="5">
+                <date>02.03.2019</date>
+                <title>Klein aber fein: Nidwalden!</title>
+                <description>In der Schrebergarten Community ist unser Schrebergarten zwar relativ unbekannt. Mit dieser Teilnahme beweisen wir jedoch das pure Gegenteil...</description>
+                <pictureLink>../../database/images/2_5.jpg</pictureLink>
+            </registration>
+        </registrations>
+    </challenge>
+    <challenge id="3" companyId="3">
+        <title>Migros it your way!</title>
+        <description>Beweist uns, was ihr im WG-Alltag alles mit Migros-Produkten anfängt und vielleicht gehört ihr zu den Gewinnern der 'Migros it your way!'-Challenge! Das Beste: Die Gewinner-WG kann eine Stunde in einem Einkaufscenter ihrer Wahl auf Kosten der Migros Genossenschaft Luzern einkaufen.</description>
+        <price>Eine Stunde Einkauf for free</price>
+        <registrations>
             <registration communityId="2">
-                <date>17.03.2019</date>
-                <title>2Die grösste Pizza</title>
-                <description>Wir stellen das beste Magebrot her und überzeugen damit schon seit Jahren unsere Gäste.</description>
-                <pictureLink>https://test1.stalder.rocks/img/picture_2.png</pictureLink>
+                <date>06.03.2019</date>
+                <title>Die Migros-Kinder zeigen wies' geht!</title>
+                <description>Seit unserer Kindheit sind alle WG-Bewohner Migros-Kinder. Deshalb kennen wir gar nichts anderes als der Alltag mit Migros-Produkten!</description>
+                <pictureLink>../../database/images/3_2.jpg</pictureLink>
             </registration>
-            <registration communityId="1">
-                <date>17.03.2019</date>
-                <title>3Test1</title>
-                <description>Desc1</description>
-                <pictureLink>https://www.motorrad-bilder.at/slideshows/291/012758/bmw-motorrad-farben-2016-90.jpg</pictureLink>
-            </registration>
-            <registration communityId="2">
-                <date>17.03.2019</date>
-                <title>4Test2</title>
-                <description>Desc2</description>
-                <pictureLink>https://images7.alphacoders.com/685/685340.jpg</pictureLink>
-            </registration>
-            <registration communityId="2">
-                <date>17.03.2019</date>
-                <title>5sTest3</title>
-                <description>Desc3</description>
-                <pictureLink>https://db-service.toubiz.de/var/plain_site/storage/images/orte/zermatt/gornergrat/gornergrat/1151395-1-ger-DE/gornergrat_front_large.jpg</pictureLink>
+            <registration communityId="6">
+                <date>07.03.2019</date>
+                <title>Die Migros &amp; Die Gebrüder Gabriel</title>
+                <description>Einkaufen gehen wir sowieso immer in der Migros, aus diesem Grund werden wir locker gewinnen! In der Stunde Gratis-Einkauf räumen wir den Laden so richtig leer...</description>
+                <pictureLink>../../database/images/3_6.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>

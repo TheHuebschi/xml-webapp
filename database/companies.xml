@@ -2,14 +2,20 @@
 <companies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="companies.xsd">
     <company id="1">
         <name>IKEA</name>
-        <description>asdfsd ökasdf ökuh</description>
+        <description>IKEA ist ein multinationaler Einrichtungskonzern. Das Unternehmen wurde 1943 von Ingvar Kamprad in Schweden gegründet und gehört heute der in den Niederlanden (Delft) registrierten Stiftung Stichting INGKA Foundation.</description>
         <location>Rothenburg</location>
         <numberOfEmployees>300</numberOfEmployees>
     </company>
     <company id="2">
-        <name>Schnittlauch AG</name>
-        <description>TestText</description>
-        <location>Lauffeburg</location>
-        <numberOfEmployees>283</numberOfEmployees>
+        <name>OBI</name>
+        <description>OBI ist eine europaweit tätige Baumarkt-Handelskette mit Hauptsitz im nordrhein-westfälischen Wermelskirchen und Marktführer in Deutschland.</description>
+        <location>Thun Süd</location>
+        <numberOfEmployees>250</numberOfEmployees>
+    </company>
+    <company id="3">
+        <name>Migros Genossenschaft Luzern</name>
+        <description>Die Migros gehört zu den grössten Detailhandelsunternehmen der Schweiz. Das Unternehmen ist in allen Kantonen, in Liechtenstein sowie in den im Südwesten der Schweiz angrenzenden französischen Departements Ain und Haute-Savoie vertreten.</description>
+        <location>Genossenschaft Luzern</location>
+        <numberOfEmployees>2000</numberOfEmployees>
     </company>
 </companies>
