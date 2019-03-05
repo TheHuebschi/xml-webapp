@@ -58,17 +58,15 @@
                 <div class="container" id="content">
                     <h4>Challenges</h4>
                     <a class="button button-primary" href="http://www.google.ch">Bewerbung einreichen</a>
-                    <a class="button button-primary" href="http://www.google.ch">Challenge ausschreiben</a>
-                    <a class="button button-primary" id="printerButton" href="../../export/index.php">
-                        <img src="../images/printer-icon.png" class="printerIcon" />
-                    </a>
+                    <a class="button button-primary challenge-button" href="http://www.google.ch">Challenge ausschreiben</a>
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Company</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th>Titel</th>
+                                <th>Firma</th>
+                                <th>Beschreibung</th>
+                                <th>Preis</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -95,9 +93,14 @@
                     <img src="../images/gallery-icon.png" class="galleryIcon" />
                 </a>
             </td>
+            <td>
+                <a class="button button-primary" href="../../export/index.php?={@id}">
+                    <img src="../images/printer-icon.png" class="printerIcon" />
+                </a>
+            </td>
         </tr>
         <tr class="hiddenPictures" id="challengePictures{@id}">
-            <td colspan="5">
+            <td colspan="6">
                 <div class="w3-content w3-display-container" style="width: 80%;">
                     <div class="galleryDiv galleryDiv{@id}">
                         <xsl:apply-templates select="registrations" />
