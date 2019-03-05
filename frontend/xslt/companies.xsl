@@ -54,10 +54,11 @@
                 <!-- Content -->
                 <div class="container" id="content">
                     <h4>Companies</h4>
-                    <table class="u-full-width">
+                    <table id="companiesTable" class="u-full-width">
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Id</th>
                                 <th>Standort</th>
                                 <th>Anz. Mitarbeiter</th>
                                 <th>Beschreibung</th>
@@ -68,7 +69,7 @@
                             <xsl:apply-templates select="$companies" />
                         </tbody>
                     </table>
-                    <a class="button button-primary" href="#">Company hinzufügen</a>
+                    <a class="button button-primary" href="./companies_edit.xhtml">Company hinzufügen</a>
                 </div>
             </body>
         </html>
