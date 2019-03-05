@@ -5,27 +5,27 @@
         <description>asdfsd &#xF6;kasdf</description>
         <size>3</size>
         <location>Rotkreuz</location>
-        <mail>contact@mywg.ch</mail>
+        <email>contact@mywg.ch</email>
     </community>
     <community id="2">
         <name>Best WG2</name>
         <description>asdfsd &#xF6;kasdf</description>
         <size>3</size>
         <location>Rotkreuz</location>
-        <mail>contact@mywg.ch</mail>
+        <email>contact@mywg.ch</email>
     </community>
     <community id="3">
         <name>ysdv</name>
         <description>asdfsdf</description>
         <size>3</size>
         <location>asdf</location>
-        <mail>claudio.huebscher@hotmail.com</mail>
+        <email>claudio.huebscher@hotmail.com</email>
     </community>
     <community id="4">
         <name>ysdv</name>
         <description>asdfsdf</description>
         <size>3</size>
         <location>asdf</location>
-        <mail>claudio.huebscher@hotmail.com</mail>
+        <email>claudio.huebscher@hotmail.com</email>
     </community>
-<community id="5"><name>Joun Chamas</name><description>Test</description><size>3</size><location>Zug</location><mail>joun.chamas@stud.hslu.com</mail></community><community id="6"><name>Schnabeltier</name><description>Trampolin</description><size>5</size><location>Uganda</location><mail>saltimbocca@schinke.ch</mail></community></communities>
+<community id="5"><name>Joun Chamas</name><description>Test</description><size>3</size><location>Zug</location><email>joun.chamas@stud.hslu.com</email></community><community id="6"><name>Schnabeltier</name><description>Trampolin</description><size>5</size><location>Uganda</location><email>saltimbocca@schinke.ch</email></community></communities>
