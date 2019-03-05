@@ -57,6 +57,11 @@
                 <!-- Content -->
                 <div class="container" id="content">
                     <h4>Challenges</h4>
+                    <a class="button button-primary" href="http://www.google.ch">Bewerbung einreichen</a>
+                    <a class="button button-primary" href="http://www.google.ch">Challenge ausschreiben</a>
+                    <a class="button button-primary" id="printerButton" href="../../export/index.php">
+                        <img src="../images/printer-icon.png" class="printerIcon" />
+                    </a>
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>

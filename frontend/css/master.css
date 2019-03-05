@@ -106,6 +106,17 @@ h4 {
   align-items: center;
   justify-content: center;
 }
+.printerIcon{
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+#printerButton{
+  position:absolute;
+  top:0;
+  right:0;
+}
 
 .challengeIMG{
   max-height: 100%;
