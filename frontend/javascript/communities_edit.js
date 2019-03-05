@@ -80,7 +80,9 @@ function editCommunities() {
         text: "Deine Community wurde erfolgreich hinzugefügt/angepasst!",
         icon: "success",
         button: "Weiter entdecken!",
-      });
+    }).then(() => {
+        window.location.href = "communities.xhtml";
+    }); 
   }
 
   function error() {
