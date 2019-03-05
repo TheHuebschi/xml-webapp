@@ -59,9 +59,6 @@
                     <h4>Challenges</h4>
                     <a class="button button-primary" href="../xhtml/Challegnes_Bewerbung.xhtml">Bewerbung einreichen</a>
                     <a class="button button-primary" id="challenge-button" href="../xhtml/Challegnes_Ausschreiben.xhtml">Challenge ausschreiben</a>
-                    <a class="button button-primary" id="printerButton" href="../../export/index.php">
-                        <img src="../images/printer-icon.png" class="printerIcon" />
-                    </a>
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>
@@ -69,6 +66,7 @@
                                 <th>Firma</th>
                                 <th>Beschreibung</th>
                                 <th>Preise</th>
+                                <th></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -86,8 +84,8 @@
     <xsl:template match="challenge">
         <xsl:variable name="companyIdForName" select="@companyId"/>
         <tr>
-            <td><xsl:value-of select="title" /></td>
-            <td><xsl:value-of select="$companies/company[@id=$companyIdForName]/name" /></td>
+            <td style="font-weight:bold;"><xsl:value-of select="title" /></td>
+            <td><a href="../xhtml/companies_edit.xhtml?id={$companyIdForName}" style="color:black;text-decoration: underline;"><xsl:value-of select="$companies/company[@id=$companyIdForName]/name" /></a></td>
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
             <td>
@@ -95,9 +93,14 @@
                     <img src="../images/gallery-icon.png" class="galleryIcon" />
                 </a>
             </td>
+            <td>
+                <a class="button button-primary" href="../../export/index.php?id={@id}">
+                    <img src="../images/printer-icon.png" class="printerIcon" />
+                </a>
+            </td>
         </tr>
         <tr class="hiddenPictures" id="challengePictures{@id}">
-            <td colspan="5">
+            <td colspan="6">
                 <div class="w3-content w3-display-container" style="width: 80%;">
                     <div class="galleryDiv galleryDiv{@id}">
                         <xsl:apply-templates select="registrations" />
