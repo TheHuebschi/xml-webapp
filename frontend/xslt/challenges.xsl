@@ -57,8 +57,8 @@
                 <!-- Content -->
                 <div class="container" id="content">
                     <h4>Challenges</h4>
-                    <a class="button button-primary" href="../xhtml/Challegnes_Bewerbung.xhtml">Bewerbung einreichen</a>
-                    <a class="button button-primary" id="challenge-button" href="../xhtml/Challegnes_Ausschreiben.xhtml">Challenge ausschreiben</a>
+                    <a class="button button-primary" href="../xhtml/Challegnes_application.xhtml">Bewerbung einreichen</a>
+                    <a class="button button-primary" id="challenge-button" href="../xhtml/Challegnes_addRegistration.xhtml">Challenge ausschreiben</a>
                     <table id="challengeTable" class="u-full-width">
                         <thead>
                             <tr>
