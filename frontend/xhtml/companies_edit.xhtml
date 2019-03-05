@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Community Challenge</title>
+        <meta name="author" content="XML Project Team #3"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../css/normalize.css"/>
+        <link rel="stylesheet" href="../css/skeleton.css"/>
+        <link rel="stylesheet" href="../css/master.css"/>
+        <link rel="icon" type="image/png" href="../images/favicon.png"/>
+        <script src="../javascript/jquery-3.3.1.min.js"></script>
+        <script src="../javascript/sweetalert.min.js"></script>
+        <script src="../javascript/main.js"></script>
+        <script src="../javascript/companies_edit.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="headerBar">
+        <div class="container">
+            <div class="row">
+            <div class="column">
+                <h1 id="title">Community Challenge</h1>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Naviagtion -->
+        <div id="navigationBar">
+            <div class="container">
+                <div class="topnav" id="myTopnav">
+                <a id="menu" onclick="collapseNavigation()">Menu</a>
+                <a href="./home.xhtml">Home</a>
+                <a href="./challenges.xhtml">Challenges</a>
+                <a href="./communities.xhtml">Communities</a>
+                <a href="./companies.xhtml">Companies</a>
+                <a href="javascript:void(0);" class="icon" onclick="collapseNavigation()">&#9776;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container" id="content">
+            <h4>Company bearbeiten/hinzufügen</h4>
+            <form name="editCompaniesForm" onsubmit="return editCompanies()" method="post">
+                <div class="row">
+                    <div class="twelve columns">
+                        <label for="nameInput">Name:</label>
+                        <input class="u-full-width" type="text" placeholder="Unsere Company" id="nameInput"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <label for="locationInput">Standort:</label>
+                        <input class="u-full-width" type="text" placeholder="Rotkreuz" id="locationInput"/>
+                    </div>
+                    <div class="six columns">
+                        <label for="numberOfEmployeesInput">Anzahl Mitglieder:</label>
+                        <input class="u-full-width" type="number" placeholder="3" id="numberOfEmployeesInput"/>
+                    </div>
+                </div>
+                <label for="descriptionInput">Beschreibung:</label>
+                <textarea class="u-full-width" placeholder="Wir sind …" id="descriptionInput"></textarea>
+                <a class="button" href="./companies.xhtml">Abbrechen</a>
+                <input class="button-primary" type="submit" value="Speichern"/>
+            </form>
+        </div>
+    </body>
+</html>
