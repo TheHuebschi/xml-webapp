@@ -57,7 +57,6 @@
                     <table class="u-full-width">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Standort</th>
                                 <th>Anz. Mitarbeiter</th>
@@ -77,12 +76,12 @@
     </xsl:template>
     <xsl:template match="company">
         <tr>
-            <td><xsl:value-of select="@id" /></td>
             <td><xsl:value-of select="name" /></td>
+            <td><xsl:value-of select="@id" /></td>
             <td><xsl:value-of select="location" /></td>
             <td><xsl:value-of select="numberOfEmployees" /></td>
             <td><xsl:value-of select="description" /></td>
-            <td><a class="button button-primary" href="#">></a></td>
+            <td><a class="button button-primary" href="#">Bearbeiten</a></td>
         </tr>
     </xsl:template>
 

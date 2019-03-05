@@ -73,7 +73,7 @@ function addCommunitiesTableRowHandler() {
         for ( var i = 1; i < rows.length; i++) {
             rows[i].i = i;
             rows[i].onclick = function() {
-                window.location='./communities_edit.xhtml?id=' + table.rows[this.i].cells[0].innerHTML;
+                window.location='./communities_edit.xhtml?id=' + table.rows[this.i].cells[1].innerHTML;
             };
         }
     }
