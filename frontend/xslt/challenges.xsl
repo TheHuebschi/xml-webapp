@@ -113,6 +113,12 @@
     </xsl:template>
     <xsl:template match="registration">
         <img src="{pictureLink}" alt="{pictureLink}" class="challengeIMG mySlides" />
+        <div class="challengeIMGOverlay">
+            <p><xsl:value-of select="date" /><br></br><br></br>
+                <xsl:value-of select="title" /><br></br><br></br>
+                <xsl:value-of select="description" />
+            </p>
+        </div>
     </xsl:template>
 
 
