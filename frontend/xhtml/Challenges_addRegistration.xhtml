@@ -16,7 +16,7 @@
     <script src="../javascript/jquery-3.3.1.min.js"></script>
     <script src="../javascript/sweetalert.min.js"></script>
     <script src="../javascript/main.js"></script>
-    <script src="../javascript/communities_edit.js"></script>
+    <script src="../javascript/Challenges_AddRegistration.js"></script>
 
 
 </head>
@@ -50,7 +50,12 @@
     <div class="container" id="content">
         <h4>Challenge hinzufügen</h4>
 
-        <form action="../upload.php" method="post" enctype="multipart/form-data">
+        <form name="newChallengeform"  onsubmit="return editChallenge()" method="post">
+
+            <div class="row">
+                <label for="companyId">Company Id:</label>
+                <input class="u-full-width" type="text" id="companyId" />
+            </div>
 
             <div class="row">
                 <label for="TitleInput">Challenge Title:</label>
@@ -58,8 +63,8 @@
             </div>
 
             <div class="row">
-                    <label for="priceInput">Challenge Price (in CHF):</label>
-                    <input class="u-full-width" placeholder="100" type="number"  id="priceInput" />
+                    <label for="priceInput">Challenge Price:</label>
+                    <input class="u-full-width" placeholder="CHF 2000.- Gutschein" type="text"  id="priceInput" />
                 </div>
 
 
@@ -67,7 +72,7 @@
             <textarea class="u-full-width" placeholder="Challenge Rules.." id="descriptionInput"></textarea>
 
             <a class="button" href="./challenges.xhtml">Abbrechen</a>
-            <input class="button-primary" type="submit" value="Speichern" name="submit" />
+            <input class="button-primary" type="submit" value="Speichern" />
 
         </form>
     </div>
