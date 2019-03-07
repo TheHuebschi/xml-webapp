@@ -85,6 +85,6 @@
     }
 
     function removeTempXML() {
-        //unlink('../../database/challenges_temp.xml');
+        unlink('../../database/challenges_temp.xml');
     }
 ?>
