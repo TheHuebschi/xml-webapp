@@ -10,7 +10,7 @@
 
     if (empty($id)) {
         $id = getNextFreeId($xml);
-        addChallenge($xml, $id,$companyId, $title, $price, $description);
+        addChallenge($xml, $id, $companyId, $title, $price, $description);
     }
     else {
         editChallenge($xml, $id, $companyId, $title, $price, $description);
@@ -42,17 +42,24 @@
         $challenge->addChild('title', $title);
         $challenge->addChild('description', $description);
         $challenge->addChild('price', $price);
+        $registrations= $challenge->addChild('registrations');
+        $registration= $registrations->addChild('registration');
+        $registration->addAttribute('communityId', $companyId );
+        $registration->addChild('date');
+        $registration->addChild('title');
+        $registration->addChild('description');
+        $registration->addChild('pictureLink');
         
     }
 
     function editChallenge($xml, $id, $companyId, $title, $price, $description) {
-        $xPathQuery = '//challenge[@id="' . "$id" . '" @companyId="' . "$companyId" . '"]';
+        $xPathQuery = '//challenge[@id="' . "$id" . '" ]'  ;
         $challenge = $xml->xpath($xPathQuery)[0];
 
         $challenge->title = $title;
         $challenge->price = $price;
         $challenge->description = $description;
-      //  $challenge->companyId = $companyId;
+      
     }
 
     function persistXML($path, $xml) {
@@ -83,6 +90,6 @@
     }
 
     function removeTempXML() {
-        unlink('../../database/challenges_temp.xml');
+        //unlink('../../database/challenges_temp.xml');
     }
 ?>

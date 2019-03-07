@@ -27,14 +27,14 @@ function loadchallenge(xml) {
     document.getElementById("TitleInput").value = getElementByXPath(xml, "title");
     document.getElementById("descriptionInput").value = getElementByXPath(xml, "description");
     document.getElementById("priceInput").value = getElementByXPath(xml, "price");
-    document.getElementById("companyId").value = getElementByXPath(xml, "companyId");
+    //document.getElementById("companyId").value = getElementByXPath(xml, "companyId");
     
 }
 
 function getElementByXPath(xml, elementName){
     var xhttp = new XMLHttpRequest();
     var result = "";
-    path = "/challenges/challenge[@id='" + getUrlVars()["id"] +"']/" + elementName
+    path = "/challenges/challenge[[@id='" + getUrlVars()["id"] +"']/" + elementName
     if (xml.evaluate) {
         var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
         result = nodes.iterateNext().childNodes[0].nodeValue;
@@ -57,10 +57,11 @@ function editChallenge() {
     type: 'POST',
     data: {
         'id': idInput,
+        'companyId': companyId,
         'title': titleInput,
         'price': priceInput,
-        'description': descriptionInput,
-        'companyId': companyId
+        'description': descriptionInput
+        
     },
     success: function() {
         success();
@@ -86,7 +87,7 @@ function editChallenge() {
   function error() {
     swal({
         title: "Oh oh!",
-        text: "Die Eingaben konnten nicht erfolgreich validiert werden!",
+        text: "Die Eingabennnnn konnten nicht erfolgreich validiert werden!",
         icon: "error",
         button: "Jetzt fixen!",
       });
