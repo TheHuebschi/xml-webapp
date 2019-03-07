@@ -16,25 +16,25 @@ function prepareRequest(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            loadregistration(xhttp.responseXML);
+            loadchallenge(xhttp.responseXML);
         }
     };
     xhttp.open("GET", "../../database/challenges.xml", true);
     xhttp.send(); 
 }
 
-function loadregistration(xml) {
-    document.getElementById("dateInput").value = getElementByXPath(xml, "date");
-    document.getElementById("TitleInputApp").value = getElementByXPath(xml, "title");
-    document.getElementById("PicInput").value = getElementByXPath(xml, "pictureLink");
-    document.getElementById("descriptionInputApp").value = getElementByXPath(xml, "description");
+function loadchallenge(xml) {
+    document.getElementById("TitleInput").value = getElementByXPath(xml, "title");
+    document.getElementById("descriptionInput").value = getElementByXPath(xml, "description");
+    document.getElementById("priceInput").value = getElementByXPath(xml, "price");
+    document.getElementById("companyId").value = getElementByXPath(xml, "companyId");
     
 }
 
 function getElementByXPath(xml, elementName){
     var xhttp = new XMLHttpRequest();
     var result = "";
-    path = "/challenges/registrations/registration[@id='" + getUrlVars()["id"] +"']/" + elementName
+    path = "/challenges/challenge[@id='" + getUrlVars()["id"] +"']/" + elementName
     if (xml.evaluate) {
         var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
         result = nodes.iterateNext().childNodes[0].nodeValue;
@@ -46,22 +46,21 @@ function getElementByXPath(xml, elementName){
     return result;
 }
 
-function editRegistration() {
-   // var idInput = getUrlVars()["id"];
-    var dateInput = document.forms["newRegistration"]["dateInput"].value;
-    var titleInput = document.forms["newRegistration"]["TitleInputApp"].value;
-    var picInput = document.forms["newRegistration"]["PicInput"].value;
-    var descriptionInput = document.forms["newRegistration"]["descriptionInputApp"].value;
- 
+function editChallenge() {
+    var idInput = getUrlVars()["id"];
+    var companyId = document.forms["newChallengeform"]["companyId"].value;
+    var titleInput = document.forms["newChallengeform"]["TitleInput"].value;
+    var priceInput = document.forms["newChallengeform"]["priceInput"].value;
+    var descriptionInput = document.forms["newChallengeform"]["descriptionInput"].value;
     $.ajax({
-    url: '../php/Challenges_AddRegistration.php',
+    url: '../php/Challenges_application.php',
     type: 'POST',
     data: {
-        'date': dateInput,
+        'id': idInput,
         'title': titleInput,
-        'picture': picInput,
+        'price': priceInput,
         'description': descriptionInput,
- 
+        'companyId': companyId
     },
     success: function() {
         success();
@@ -76,7 +75,7 @@ function editRegistration() {
   function success() {
     swal({
         title: "Geschafft!",
-        text: "Deine Community wurde erfolgreich hinzugefügt/angepasst!",
+        text: "Deine Challenge wurde erfolgreich hinzugefügt!",
         icon: "success",
         button: "Weiter entdecken!",
     }).then(() => {

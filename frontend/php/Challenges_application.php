@@ -1,18 +1,19 @@
 <?php 
-    $date = htmlspecialchars($_POST["date"]);
+    $id = htmlspecialchars($_POST["id"]);
+    $companyId = htmlspecialchars($_POST["companyId"]);
     $title = htmlspecialchars($_POST["title"]);
-    $picture = htmlspecialchars($_POST["picture"]);
+    $price = htmlspecialchars($_POST["price"]);
     $description = htmlspecialchars($_POST["description"]);
- 
+    
     
     $xml = simplexml_load_file('../../database/challenges.xml');
 
     if (empty($id)) {
         $id = getNextFreeId($xml);
-        addregistration($xml, $date, $title, $picture, $description);
+        addChallenge($xml, $id,$companyId, $title, $price, $description);
     }
     else {
-        editregistration($xml, $date, $title, $picture, $description);
+        editChallenge($xml, $id, $companyId, $title, $price, $description);
     }
     
     persistXML('../../database/challenges_temp.xml', $xml);
@@ -34,24 +35,24 @@
         return $results[count($results)-1] + 1;
     }
 
-    function addregistration($xml, $date, $title, $picture, $description) {
-        $community = $xml->addChild('registration');
-       // $community->addAttribute('id', $id);
-        $community->addChild('date', $date);
-        $community->addChild('title', $title);
-        $community->addChild('description', $description);
-        $community->addChild('pictureLink', $pictureLink);
+    function addChallenge($xml, $id,$companyId, $title, $price, $description) {
+        $challenge = $xml->addChild('challenge');
+        $challenge->addAttribute('id', $id);
+        $challenge->addAttribute('companyId', $companyId);
+        $challenge->addChild('title', $title);
+        $challenge->addChild('description', $description);
+        $challenge->addChild('price', $price);
+        
     }
 
-    function editregistration($xml, $date, $title, $picture, $description) {
-        $xPathQuery = '//challenge[@id="' . "$id" . '"]';
-        $community = $xml->xpath($xPathQuery)[0];
+    function editChallenge($xml, $id, $companyId, $title, $price, $description) {
+        $xPathQuery = '//challenge[@id="' . "$id" . '" @companyId="' . "$companyId" . '"]';
+        $challenge = $xml->xpath($xPathQuery)[0];
 
-        $community->date = $date;
-        $community->title = $title;
-        $community->picture = $picture;
-        $community->description = $description;
-       
+        $challenge->title = $title;
+        $challenge->price = $price;
+        $challenge->description = $description;
+      //  $challenge->companyId = $companyId;
     }
 
     function persistXML($path, $xml) {
