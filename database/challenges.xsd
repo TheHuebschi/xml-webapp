@@ -29,7 +29,7 @@
 
   <xs:element name="registrations">
     <xs:complexType>
-      <xs:sequence maxOccurs="unbounded">
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
         <xs:element ref="registration"/>
       </xs:sequence>
     </xs:complexType>
