@@ -87,7 +87,7 @@ function editChallenge() {
   function error() {
     swal({
         title: "Oh oh!",
-        text: "Die Eingabennnnn konnten nicht erfolgreich validiert werden!",
+        text: "Die Eingaben konnten nicht erfolgreich validiert werden!",
         icon: "error",
         button: "Jetzt fixen!",
       });
