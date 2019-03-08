@@ -9,13 +9,13 @@
                 <date>05.03.2019</date>
                 <title>Kochen? Kreativ? Die perfekte Aufgabe für uns!</title>
                 <description>Wir beweisen euch, dass es nur ein Team gibt, welches dieser Challenge gewachsen ist und dies mit purer Girl-Power!</description>
-                <pictureLink>../../database/images/1_2.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/1_2.jpg</pictureLink>
             </registration>
             <registration communityId="1">
                 <date>06.03.2019</date>
                 <title>Die Kochkünste der Handwerker</title>
                 <description>Was vielleicht nicht ganz offensichtlich ist: In uns stecken die leidenschaftlichsten Köche der Stadt Luzern.</description>
-                <pictureLink>../../database/images/1_1.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/1_1.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>
@@ -28,19 +28,19 @@
                 <date>01.03.2019</date>
                 <title>DER schönste Schrebergarten der Zentralschweiz</title>
                 <description>Für die Challenge zählen zwar nur zentralschweizer Schrebergärten, wir beweisen OBI aber, dass wir der schönste Schrebergarten der gesamten Schweiz sind!</description>
-                <pictureLink>../../database/images/2_3.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/2_3.jpg</pictureLink>
             </registration>
             <registration communityId="4">
                 <date>02.03.2019</date>
                 <title>Die schönste Aussicht gewinnt? Dann gibts nur uns!</title>
                 <description>Die schönste Aussicht auf das Zentralschweizer Bergpanorama gibt es ausschliesslich in unserem Schrebergarten. Nur schon deswegen werden wir sowas von gewinnen.</description>
-                <pictureLink>../../database/images/2_4.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/2_4.jpg</pictureLink>
             </registration>
             <registration communityId="5">
                 <date>02.03.2019</date>
                 <title>Klein aber fein: Nidwalden!</title>
                 <description>In der Schrebergarten Community ist unser Schrebergarten zwar relativ unbekannt. Mit dieser Teilnahme beweisen wir jedoch das pure Gegenteil...</description>
-                <pictureLink>../../database/images/2_5.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/2_5.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>
@@ -53,13 +53,13 @@
                 <date>06.03.2019</date>
                 <title>Die Migros-Kinder zeigen wies' geht!</title>
                 <description>Seit unserer Kindheit sind alle WG-Bewohner Migros-Kinder. Deshalb kennen wir gar nichts anderes als der Alltag mit Migros-Produkten!</description>
-                <pictureLink>../../database/images/3_2.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/3_2.jpg</pictureLink>
             </registration>
             <registration communityId="6">
                 <date>07.03.2019</date>
                 <title>Die Migros &amp; Die Gebrüder Gabriel</title>
                 <description>Einkaufen gehen wir sowieso immer in der Migros, aus diesem Grund werden wir locker gewinnen! In der Stunde Gratis-Einkauf räumen wir den Laden so richtig leer...</description>
-                <pictureLink>../../database/images/3_6.jpg</pictureLink>
+                <pictureLink>https://xml.temperli.online/database/images/3_6.jpg</pictureLink>
             </registration>
         </registrations>
     </challenge>
