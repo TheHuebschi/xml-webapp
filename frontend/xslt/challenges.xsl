@@ -26,6 +26,7 @@
                 <script src="../javascript/jquery-3.3.1.min.js"></script>
                 <script src="../javascript/main.js" charset="utf-8"></script>
                 <script src="../javascript/slider.js"></script>
+                <script src="../javascript/sweetalert.min.js"></script>
                 <script src="../javascript/ie-arrayfrom.js"></script>
             </head>
             <body>
@@ -89,7 +90,7 @@
             <td><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
             <td>
-                <a class="button button-primary" href="javascript:resetSlideIndex();showChallengePictures({@id});showDivs(1,{@id});">
+                <a class="button button-primary" href="javascript:resetSlideIndex();showChallengePictures({@id});">
                     <img src="../images/gallery-icon.png" class="galleryIcon" />
                 </a>
             </td>

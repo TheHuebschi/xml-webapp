@@ -8,22 +8,6 @@ function collapseNavigation() {
     }
 }
 
-function showChallengePictures(id) {
-  
-  var element = document.getElementById("challengePictures" + id);
-  if (element.className == "hiddenPictures"){
-    Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
-      element.className = "hiddenPictures";
-    });
-    element.className = "notHiddenPictures";
-  } else{
-    Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
-      element.className = "hiddenPictures";
-    });
-  }
-
-}
-
 init();
 
 function init(){
@@ -31,6 +15,24 @@ function init(){
     addCommunitiesTableRowHandler();
     addCompaniesTableRowHandler();
   }, false);
+}
+
+function showChallengePictures(id) {
+  var element = document.getElementById("challengePictures" + id);
+  var challengePictures = document.querySelectorAll("#challengePictures" + id + " .challengeIMG");
+  if (challengePictures.length != 0){
+    if (element.className == "hiddenPictures"){
+      Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
+        element.className = "hiddenPictures";
+      });
+      element.className = "notHiddenPictures";
+      showDivs(1,id);
+    } else{
+      Array.from(document.getElementsByClassName('notHiddenPictures')).forEach(function(element) {
+        element.className = "hiddenPictures";
+      });
+    }
+  }
 }
 
 function addCommunitiesTableRowHandler() {
