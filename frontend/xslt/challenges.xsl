@@ -87,7 +87,7 @@
         <tr>
             <td style="font-weight:bold;"><xsl:value-of select="title" /></td>
             <td><a href="../xhtml/companies_edit.xhtml?id={$companyIdForName}" style="color:black;text-decoration: underline;"><xsl:value-of select="$companies/company[@id=$companyIdForName]/name" /></a></td>
-            <td><xsl:value-of select="description" /></td>
+            <td style="font-size: 0.8em;"><xsl:value-of select="description" /></td>
             <td><xsl:value-of select="price" /></td>
             <td>
                 <a class="button button-primary" href="javascript:resetSlideIndex();showChallengePictures({@id});">
