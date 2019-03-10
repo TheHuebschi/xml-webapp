@@ -1,19 +1,36 @@
 <?php 
+    //$id = htmlspecialchars($_POST["id"]);
+    $communityId = htmlspecialchars($_POST["communityId"]);
     $date = htmlspecialchars($_POST["date"]);
     $title = htmlspecialchars($_POST["title"]);
     $picture = htmlspecialchars($_POST["picture"]);
     $description = htmlspecialchars($_POST["description"]);
- 
+
+    $target_dir = "../../database/images/";
+    $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+  
+    
+   // $file = $_FILES['picture']; 
+   // $PicName = $file['name'];
+
+   /* if(isset($_POST["submit"])) {
+
+        move_uploaded_file($_FILES["picture"]["name"], $target_file)
+    }
+*/
     
     $xml = simplexml_load_file('../../database/challenges.xml');
 
-    if (empty($id)) {
+    addregistration($xml, $communityId, $date, $title, $picture, $description, $target_file);
+
+
+  /*  if (empty($id)) {
         $id = getNextFreeId($xml);
-        addregistration($xml, $date, $title, $picture, $description);
+        addregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file);
     }
     else {
-        editregistration($xml, $date, $title, $picture, $description);
-    }
+        editregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file);
+    } */
     
     persistXML('../../database/challenges_temp.xml', $xml);
     
@@ -26,24 +43,33 @@
         http_response_code(500);
     }
 
-    function getNextFreeId($xml) {
+  /*  function getNextFreeId($xml) {
         $xPathQuery = '//@id';
         $results = $xml->xpath($xPathQuery);
         rsort($results);
         
         return $results[count($results)-1] + 1;
     }
-
-    function addregistration($xml, $date, $title, $picture, $description) {
-        $community = $xml->addChild('registration');
-       // $community->addAttribute('id', $id);
-        $community->addChild('date', $date);
-        $community->addChild('title', $title);
-        $community->addChild('description', $description);
-        $community->addChild('pictureLink', $pictureLink);
+*/
+    function addregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file) {
+        $registrations= $xml->xpath();
+        $registration= $registrations->addChild('registration')
+        $registration->addAttribute('communityId', $communityId);
+        $registration->addChild('date', $date);
+        $registration->addChild('title', $title);
+        $registration->addChild('description', $description);
+        $registration->addChild('target_file', $target_file);
     }
 
-    function editregistration($xml, $date, $title, $picture, $description) {
+
+  /*  function editregistration($xml,$communityId, $date, $title, $picture, $description) {
+        $registration= $registrations->addChild('registration')
+        //   $registrations = $xml->addChild('registration');
+           $registration->addAttribute('communityId', $communityId);
+           $registration->addChild('date', $date);
+           $registration->addChild('title', $title);
+           $registration->addChild('description', $description);
+           $registration->addChild('target_file', $target_file);
         $xPathQuery = '//challenge[@id="' . "$id" . '"]';
         $community = $xml->xpath($xPathQuery)[0];
 
@@ -53,7 +79,7 @@
         $community->description = $description;
        
     }
-
+*/
     function persistXML($path, $xml) {
         file_put_contents($path, $xml->asXML());
     }
@@ -82,6 +108,6 @@
     }
 
     function removeTempXML() {
-        unlink('../../database/challenges_temp.xml');
+      //  unlink('../../database/challenges_temp.xml');
     }
 ?>

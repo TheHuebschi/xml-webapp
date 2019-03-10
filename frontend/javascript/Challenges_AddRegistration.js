@@ -34,7 +34,7 @@ function loadregistration(xml) {
 function getElementByXPath(xml, elementName){
     var xhttp = new XMLHttpRequest();
     var result = "";
-    path = "/challenges/registrations/registration[@id='" + getUrlVars()["id"] +"']/" + elementName
+    path = "/challenges/challenge/registrations/registration[@id='" + getUrlVars()["id"] +"']/" + elementName
     if (xml.evaluate) {
         var nodes = xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
         result = nodes.iterateNext().childNodes[0].nodeValue;
@@ -47,7 +47,8 @@ function getElementByXPath(xml, elementName){
 }
 
 function editRegistration() {
-   // var idInput = getUrlVars()["id"];
+    var idInput = getUrlVars()["id"];
+    var communityId = document.forms["newRegistration"]["communityId"].value;
     var dateInput = document.forms["newRegistration"]["dateInput"].value;
     var titleInput = document.forms["newRegistration"]["TitleInputApp"].value;
     var picInput = document.forms["newRegistration"]["PicInput"].value;
@@ -57,6 +58,8 @@ function editRegistration() {
     url: '../php/Challenges_AddRegistration.php',
     type: 'POST',
     data: {
+        'id': idInput,
+        'communityId': communityId,
         'date': dateInput,
         'title': titleInput,
         'picture': picInput,
@@ -76,7 +79,7 @@ function editRegistration() {
   function success() {
     swal({
         title: "Geschafft!",
-        text: "Deine Community wurde erfolgreich hinzugefügt/angepasst!",
+        text: "Deine registration wurde erfolgreich hinzugefügt!",
         icon: "success",
         button: "Weiter entdecken!",
     }).then(() => {
