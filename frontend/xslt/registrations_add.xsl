@@ -7,6 +7,7 @@
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
     <xsl:variable name="communities" select="document('../../database/communities.xml')/communities"/>
+    <xsl:variable name="challenges" select="document('../../database/challenges.xml')/challenges"/>
 
     <xsl:template match="/">
 
@@ -70,6 +71,15 @@
 
                         </div>
 
+                        <div class="row">
+
+                          <label for="challengeId">Choose your Challenge:</label>
+                        <select name="challengeId" id="challengeId">
+                            <xsl:apply-templates select="$challenges/challenge" />
+                        </select>
+
+                        </div>
+
 
                         <div class="row">
                             <label for="dateInput">Date:</label>
@@ -106,6 +116,10 @@
 
     <xsl:template match="community">
         <option value="{@id}"><xsl:value-of select="name" /></option>
+    </xsl:template>
+
+        <xsl:template match="challenge">
+        <option value="{@id}"><xsl:value-of select="title" /></option>
     </xsl:template>
 
 </xsl:stylesheet>
