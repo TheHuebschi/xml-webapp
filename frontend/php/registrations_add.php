@@ -1,52 +1,38 @@
 <?php 
     //$id = htmlspecialchars($_POST["id"]);
+    $challengeId = htmlspecialchars($_POST["challengeId"]);
     $communityId = htmlspecialchars($_POST["communityId"]);
-    $date = htmlspecialchars($_POST["date"]);
+    $date = date('d.m.Y');
     $title = htmlspecialchars($_POST["title"]);
-    $PicInput = htmlspecialchars($_POST["PicInput"]);
+    $picInput = htmlspecialchars($_POST["picInput"]);
     $description = htmlspecialchars($_POST["description"]);
 
-    // Upload Picture and store its link in  $pictureLink
-    $target_dir = "../../database/images/";
-    $target_file = $target_dir . basename($_FILES["PicInput"]["name"]);
-    $pictureLink = "https://xml.temperli.online/database/images/" . basename($_FILES["PicInput"]["name"]);
-    move_uploaded_file($_FILES["PicInput"]["tmp_name"], $target_file)    
-
-
-    $xml = simplexml_load_file('../../database/challenges.xml');
-    addregistration($xml, $communityId, $date, $title, $description, $pictureLink);
-
-
-  /*  if (empty($id)) {
-        $id = getNextFreeId($xml);
-        addregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file);
-    }
-    else {
-        editregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file);
-    } */
+    $pictureLink = uploadPicture($picInput);
     
+    $xml = simplexml_load_file('../../database/challenges.xml');
+    addregistration($xml, $challengeId, $communityId, $date, $title, $description, $pictureLink);
     persistXML('../../database/challenges_temp.xml', $xml);
     
-    if (validateXML()) {
+    if (validateXML() && $pictureLink != "error") {
+        echo "success";
         replaceXML();
         removeTempXML();
         http_response_code(200);
-    } else {
+    } elseif($pictureLink != "error") {
+        echo "Die Eingaben konnten nicht erfolgreich validiert werden!";
         removeTempXML();
-        http_response_code(500);
+        http_response_code(200);
+        
+    }else{
+        removeTempXML();
+        http_response_code(200);
     }
 
-  /*  function getNextFreeId($xml) {
-        $xPathQuery = '//@id';
-        $results = $xml->xpath($xPathQuery);
-        rsort($results);
+    function addregistration($xml, $challengeId, $communityId, $date, $title, $description, $pictureLink) {
+        $xPathQuery = '//challenge[@id="' . "$challengeId" . '"]/registrations';
+        $registrations = $xml->xpath($xPathQuery)[0];
         
-        return $results[count($results)-1] + 1;
-    }
-*/
-    function addregistration($xml, $communityId, $date, $title, $description, $pictureLink) {
-        //$registrations= $xml->xpath();
-        $registration= $registrations->addChild('registration')
+        $registration= $registrations->addChild('registration');
         $registration->addAttribute('communityId', $communityId);
         $registration->addChild('date', $date);
         $registration->addChild('title', $title);
@@ -54,25 +40,6 @@
         $registration->addChild('pictureLink', $pictureLink);
     }
 
-
-  /*  function editregistration($xml, $communityId, $date, $title, $description, $pictureLink) {
-        $registration= $registrations->addChild('registration')
-        //   $registrations = $xml->addChild('registration');
-           $registration->addAttribute('communityId', $communityId);
-           $registration->addChild('date', $date);
-           $registration->addChild('title', $title);
-           $registration->addChild('description', $description);
-           $registration->addChild('target_file', $target_file);
-        $xPathQuery = '//challenge[@id="' . "$id" . '"]';
-        $community = $xml->xpath($xPathQuery)[0];
-
-        $community->date = $date;
-        $community->title = $title;
-        $community->picture = $picture;
-        $community->description = $description;
-       
-    }
-*/
     function persistXML($path, $xml) {
         file_put_contents($path, $xml->asXML());
     }
@@ -101,6 +68,42 @@
     }
 
     function removeTempXML() {
-      //  unlink('../../database/challenges_temp.xml');
+        unlink('../../database/challenges_temp.xml');
+    }
+
+    function uploadPicture($picInput){
+        $errorText = "Error: ";
+        $target_dir = "../../database/images/";
+        $target_file = $target_dir . basename(str_replace("\\", '/', $picInput)); 
+        $pictureLink = "https://xml.temperli.online/database/images/" . basename(str_replace("\\", '/', $picInput));
+    
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        
+        // Check if image file is a actual image or fake image
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+            $errorText .= "Sorry, nur JPG, JPEG, PNG & GIF files sind erlaubt.";
+            $uploadOk = 0;
+        }
+
+        // Check if file already exists
+        if (file_exists($target_file)) {
+            $errorText .= "Sorry, die Datei existiert bereits.";
+            $uploadOk = 0;
+        }
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo $errorText;
+            return "error";
+        // if everything is ok, try to upload file
+        } else {
+            if (move_uploaded_file($_FILES["picInput"]["tmp_name"], $target_file)) {
+                echo "Die Datei ". basename(str_replace("\\", '/', $picInput)). " wurde erfolgreich hochgeladen.";
+            } else {
+                echo "Sorry, ein Fehler beim Upload ist aufgetreten." . $_FILES[0];
+                return "error";
+            }
+        }
+        return $pictureLink;
     }
 ?>

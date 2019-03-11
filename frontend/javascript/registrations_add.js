@@ -46,28 +46,28 @@ function getElementByXPath(xml, elementName){
     return result;
 }
 
-function editRegistration() {
+function addRegistration() {
     //var idInput = getUrlVars()["id"];
+    var challengeId = document.forms["newRegistration"]["challengeId"].value;
     var communityId = document.forms["newRegistration"]["communityId"].value;
-    var dateInput = document.forms["newRegistration"]["dateInput"].value;
-    var titleInput = document.forms["newRegistration"]["TitleInputApp"].value;
-    var PicInput = document.forms["newRegistration"]["PicInput"].value;
-    var descriptionInput = document.forms["newRegistration"]["descriptionInputApp"].value;
+    var titleInput = document.forms["newRegistration"]["titleInput"].value;
+    var picInput = document.forms["newRegistration"]["picInput"].value;
+    var descriptionInput = document.forms["newRegistration"]["descriptionInput"].value;
  
     $.ajax({
-    url: '../php/Challenges_AddRegistration.php',
+    url: '../php/registrations_add.php',
     type: 'POST',
     data: {
     //    'id': idInput,
+        'challengeId': challengeId,
         'communityId': communityId,
-        'date': dateInput,
         'title': titleInput,
-        'PicInput': PicInput,
+        'picInput': picInput,
         'description': descriptionInput,
  
     },
-    success: function() {
-        success();
+    success: function(data) {
+        success(data);
     },
     error: function() {
         error();
@@ -76,22 +76,13 @@ function editRegistration() {
     return false;
   }
 
-  function success() {
-    swal({
-        title: "Geschafft!",
-        text: "Deine registration wurde erfolgreich hinzugefügt!",
-        icon: "success",
-        button: "Weiter entdecken!",
-    }).then(() => {
+  function success(data) {
+    alert(data);
+    if(data == "success"){
         window.location.href = "challenges.xhtml";
-    }); 
+    }
   }
 
   function error() {
-    swal({
-        title: "Oh oh!",
-        text: "Die Eingaben konnten nicht erfolgreich validiert werden!",
-        icon: "error",
-        button: "Jetzt fixen!",
-      });
+    alert("Etwas ist schiefgelaufen!");
   }

@@ -60,47 +60,41 @@
                 <div class="container" id="content">
                     <h4>Bewerbung Einreichen</h4>
 
-                    <form name="newRegistration" action="../php/upload.php"  method="post" enctype="multipart/form-data">
+                    <form name="newRegistration" onsubmit="return addRegistration()"  method="post" enctype="multipart/form-data">
 
                         <div class="row">
-
-                          <label for="communityId">Comunity:</label>
-                        <select name="communityId" id="communityId">
-                            <xsl:apply-templates select="$communities/community" />
-                        </select>
-
+                            <label for="challengeId">Challenge:</label>
+                            <select name="challengeId" id="challengeId">
+                                <xsl:apply-templates select="$challenges/challenge" />
+                            </select>
                         </div>
 
                         <div class="row">
-
-                          <label for="challengeId">Choose your Challenge:</label>
-                        <select name="challengeId" id="challengeId">
-                            <xsl:apply-templates select="$challenges/challenge" />
-                        </select>
-
+                            <label for="communityId">Community:</label>
+                            <select name="communityId" id="communityId">
+                                <xsl:apply-templates select="$communities/community" />
+                            </select>
                         </div>
 
-
                         <div class="row">
-                            <label for="dateInput">Date:</label>
+                            <label for="dateInput">Datum:</label>
                             <input class="u-full-width" type="text" id="dateInput" />
                         </div>   
 
                         <div class="row">
-                            <label for="TitleInputApp">Title:</label>
-                            <input class="u-full-width" type="text"  id="TitleInputApp" />
+                            <label for="titleInput">Titel:</label>
+                            <input class="u-full-width" type="text"  id="titleInput" />
                         </div>   
         
                         <div class="row">
-                            <label>Select image to upload:</label>
-                            <input class="button" type="file" name="PicInput"  id="PicInput" /> 
-                            <!-- <label> <input type="submit" value="Upload Image" name="submit"> </label> -->
+                            <label>Bild:</label>
+                            <input class="button" type="file" name="picInput"  id="picInput" /> 
                         </div>
 
                         
                         <div class="row">
-                            <label for="descriptionInputApp">Beschreibung</label>
-                            <textarea class="u-full-width" placeholder="wieso wir..." id="descriptionInputApp"></textarea>
+                            <label for="descriptionInput">Beschreibung</label>
+                            <textarea class="u-full-width" placeholder="Was macht uns speziell?" id="descriptionInput"></textarea>
                         </div> 
 
 
@@ -113,13 +107,10 @@
 
         </html>
     </xsl:template>
-
     <xsl:template match="community">
         <option value="{@id}"><xsl:value-of select="name" /></option>
     </xsl:template>
-
-        <xsl:template match="challenge">
+    <xsl:template match="challenge">
         <option value="{@id}"><xsl:value-of select="title" /></option>
     </xsl:template>
-
 </xsl:stylesheet>
