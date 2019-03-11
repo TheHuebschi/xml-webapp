@@ -6,7 +6,7 @@
                 doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
                 indent="yes" />
-    <xsl:variable name="companies" select="document('../../database/companies.xml')/companies"/>
+    <xsl:variable name="communities" select="document('../../database/communities.xml')/communities"/>
 
     <xsl:template match="/">
 
@@ -62,8 +62,12 @@
                     <form name="newRegistration" action="../php/upload.php"  method="post" enctype="multipart/form-data">
 
                         <div class="row">
-                            <label for="communityId">Community Id:</label>
-                            <input class="u-full-width" type="text" id="communityId" />
+
+                          <label for="communityId">Comunity:</label>
+                        <select name="communityId" id="communityId">
+                            <xsl:apply-templates select="$communities/community" />
+                        </select>
+
                         </div>
 
 
@@ -99,4 +103,9 @@
 
         </html>
     </xsl:template>
+
+    <xsl:template match="community">
+        <option value="{@id}"><xsl:value-of select="name" /></option>
+    </xsl:template>
+
 </xsl:stylesheet>
