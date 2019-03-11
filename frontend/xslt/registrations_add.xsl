@@ -77,11 +77,6 @@
                         </div>
 
                         <div class="row">
-                            <label for="dateInput">Datum:</label>
-                            <input class="u-full-width" type="text" id="dateInput" />
-                        </div>   
-
-                        <div class="row">
                             <label for="titleInput">Titel:</label>
                             <input class="u-full-width" type="text"  id="titleInput" />
                         </div>   
