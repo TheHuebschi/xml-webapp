@@ -3,25 +3,18 @@
     $communityId = htmlspecialchars($_POST["communityId"]);
     $date = htmlspecialchars($_POST["date"]);
     $title = htmlspecialchars($_POST["title"]);
-    $picture = htmlspecialchars($_POST["picture"]);
+    $PicInput = htmlspecialchars($_POST["PicInput"]);
     $description = htmlspecialchars($_POST["description"]);
 
+    // Upload Picture and store its link in  $pictureLink
     $target_dir = "../../database/images/";
-    $target_file = $target_dir . basename($_FILES["picture"]["name"]);
-  
-    
-   // $file = $_FILES['picture']; 
-   // $PicName = $file['name'];
+    $target_file = $target_dir . basename($_FILES["PicInput"]["name"]);
+    $pictureLink = "https://xml.temperli.online/database/images/" . basename($_FILES["PicInput"]["name"]);
+    move_uploaded_file($_FILES["PicInput"]["tmp_name"], $target_file)    
 
-   /* if(isset($_POST["submit"])) {
 
-        move_uploaded_file($_FILES["picture"]["name"], $target_file)
-    }
-*/
-    
     $xml = simplexml_load_file('../../database/challenges.xml');
-
-    addregistration($xml, $communityId, $date, $title, $picture, $description, $target_file);
+    addregistration($xml, $communityId, $date, $title, $description, $pictureLink);
 
 
   /*  if (empty($id)) {
@@ -51,18 +44,18 @@
         return $results[count($results)-1] + 1;
     }
 */
-    function addregistration($xml, $id, $communityId, $date, $title, $picture, $description, $target_file) {
-        $registrations= $xml->xpath();
+    function addregistration($xml, $communityId, $date, $title, $description, $pictureLink) {
+        //$registrations= $xml->xpath();
         $registration= $registrations->addChild('registration')
         $registration->addAttribute('communityId', $communityId);
         $registration->addChild('date', $date);
         $registration->addChild('title', $title);
         $registration->addChild('description', $description);
-        $registration->addChild('target_file', $target_file);
+        $registration->addChild('pictureLink', $pictureLink);
     }
 
 
-  /*  function editregistration($xml,$communityId, $date, $title, $picture, $description) {
+  /*  function editregistration($xml, $communityId, $date, $title, $description, $pictureLink) {
         $registration= $registrations->addChild('registration')
         //   $registrations = $xml->addChild('registration');
            $registration->addAttribute('communityId', $communityId);

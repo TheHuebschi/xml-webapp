@@ -47,22 +47,22 @@ function getElementByXPath(xml, elementName){
 }
 
 function editRegistration() {
-    var idInput = getUrlVars()["id"];
+    //var idInput = getUrlVars()["id"];
     var communityId = document.forms["newRegistration"]["communityId"].value;
     var dateInput = document.forms["newRegistration"]["dateInput"].value;
     var titleInput = document.forms["newRegistration"]["TitleInputApp"].value;
-    var picInput = document.forms["newRegistration"]["PicInput"].value;
+    var PicInput = document.forms["newRegistration"]["PicInput"].value;
     var descriptionInput = document.forms["newRegistration"]["descriptionInputApp"].value;
  
     $.ajax({
-    url: '../php/registrations_add.php',
+    url: '../php/Challenges_AddRegistration.php',
     type: 'POST',
     data: {
-        'id': idInput,
+    //    'id': idInput,
         'communityId': communityId,
         'date': dateInput,
         'title': titleInput,
-        'picture': picInput,
+        'PicInput': PicInput,
         'description': descriptionInput,
  
     },
