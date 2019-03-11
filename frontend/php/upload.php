@@ -1,6 +1,15 @@
 <?php
 $target_dir = "../../database/images/";
 $target_file = $target_dir . basename($_FILES["PicInput"]["name"]);
+$PicLink = "https://xml.temperli.online/database/images/" . basename($_FILES["PicInput"]["name"]);
+
+if (move_uploaded_file($_FILES["PicInput"]["tmp_name"], $target_file)) {
+    echo "Pic has been Uploaded, Pic Link:  ". $PicLink ;
+}
+else {
+    echo "Sorry, there was an error uploading your file.";
+}
+/*
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -37,9 +46,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["PicInput"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["PicInput"]["name"]). " has been uploaded.";
+        echo " Pic Link:  ". $PicLink ;
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-}
+} */
 ?>
