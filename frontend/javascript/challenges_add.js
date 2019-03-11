@@ -53,7 +53,7 @@ function editChallenge() {
     var priceInput = document.forms["newChallengeform"]["priceInput"].value;
     var descriptionInput = document.forms["newChallengeform"]["descriptionInput"].value;
     $.ajax({
-    url: '../php/Challenges_application.php',
+    url: '../php/challenges_add.php',
     type: 'POST',
     data: {
         'id': idInput,

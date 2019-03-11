@@ -55,7 +55,7 @@ function editRegistration() {
     var descriptionInput = document.forms["newRegistration"]["descriptionInputApp"].value;
  
     $.ajax({
-    url: '../php/Challenges_AddRegistration.php',
+    url: '../php/registrations_add.php',
     type: 'POST',
     data: {
         'id': idInput,
