@@ -47,25 +47,23 @@ function getElementByXPath(xml, elementName){
 }
 
 function addRegistration() {
-    //var idInput = getUrlVars()["id"];
     var challengeId = document.forms["newRegistration"]["challengeId"].value;
     var communityId = document.forms["newRegistration"]["communityId"].value;
     var titleInput = document.forms["newRegistration"]["titleInput"].value;
-    var picInput = document.forms["newRegistration"]["picInput"].value;
     var descriptionInput = document.forms["newRegistration"]["descriptionInput"].value;
+    var formData = new FormData();
+    formData.append('challengeId', challengeId);
+    formData.append('communityId', communityId);
+    formData.append('titleInput', titleInput);
+    formData.append('picInput', $('#picInput')[0].files[0]);
+    formData.append('descriptionInput', descriptionInput);
  
     $.ajax({
     url: '../php/registrations_add.php',
     type: 'POST',
-    data: {
-    //    'id': idInput,
-        'challengeId': challengeId,
-        'communityId': communityId,
-        'title': titleInput,
-        'picInput': picInput,
-        'description': descriptionInput,
- 
-    },
+    data: formData,
+    processData: false,
+    contentType: false,
     success: function(data) {
         success(data);
     },
@@ -77,8 +75,10 @@ function addRegistration() {
   }
 
   function success(data) {
-    alert(data);
-    if(data == "success"){
+    if(data != "success"){
+        alert(data);
+    }else{
+        alert("Bewerbung erfolgreich eingereicht!");
         window.location.href = "challenges.xhtml";
     }
   }

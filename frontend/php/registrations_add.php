@@ -1,13 +1,14 @@
 <?php 
-    //$id = htmlspecialchars($_POST["id"]);
-    $challengeId = htmlspecialchars($_POST["challengeId"]);
-    $communityId = htmlspecialchars($_POST["communityId"]);
+    $challengeId = $_POST['challengeId'];
+    $communityId = $_POST['communityId'];
+    $title = $_POST['titleInput'];
+    $description = $_POST['descriptionInput'];
     $date = date('d.m.Y');
-    $title = htmlspecialchars($_POST["title"]);
-    $picInput = htmlspecialchars($_POST["picInput"]);
-    $description = htmlspecialchars($_POST["description"]);
 
-    $pictureLink = uploadPicture($picInput);
+    $picInput = htmlspecialchars($_POST["picInput"]);
+    $picInputName = $_FILES['picInput']['name'];
+
+    $pictureLink = uploadPicture($picInputName);
     
     $xml = simplexml_load_file('../../database/challenges.xml');
     addregistration($xml, $challengeId, $communityId, $date, $title, $description, $pictureLink);
@@ -82,15 +83,21 @@
         
         // Check if image file is a actual image or fake image
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-            $errorText .= "Sorry, nur JPG, JPEG, PNG & GIF files sind erlaubt.";
+            $errorText .= "Nur JPG, JPEG, PNG & GIF files sind erlaubt. ";
             $uploadOk = 0;
         }
 
         // Check if file already exists
         if (file_exists($target_file)) {
-            $errorText .= "Sorry, die Datei existiert bereits.";
+            $errorText .= "Die Datei existiert bereits. ";
             $uploadOk = 0;
         }
+        // Check file size
+        if ($_FILES["picInput"]["size"] > 2000000) {
+            $errorText .= "Die Datei ist zu gross. Sie muss unter 2MB sein.";
+            $uploadOk = 0;
+        }
+
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             echo $errorText;
@@ -98,9 +105,8 @@
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($_FILES["picInput"]["tmp_name"], $target_file)) {
-                echo "Die Datei ". basename(str_replace("\\", '/', $picInput)). " wurde erfolgreich hochgeladen.";
             } else {
-                echo "Sorry, ein Fehler beim Upload ist aufgetreten." . $_FILES[0];
+                echo "Ein Fehler beim Upload ist aufgetreten." . $_FILES[0];
                 return "error";
             }
         }
