@@ -74,21 +74,10 @@ function editChallenge() {
   }
 
   function success() {
-    swal({
-        title: "Geschafft!",
-        text: "Deine Challenge wurde erfolgreich hinzugefügt!",
-        icon: "success",
-        button: "Weiter entdecken!",
-    }).then(() => {
-        window.location.href = "challenges.xhtml";
-    }); 
+    alert("Deine Challenge wurde erfolgreich hinzugefügt!");
+    window.location.href = "challenges.xhtml";
   }
 
   function error() {
-    swal({
-        title: "Oh oh!",
-        text: "Die Eingaben konnten nicht erfolgreich validiert werden!",
-        icon: "error",
-        button: "Jetzt fixen!",
-      });
+    alert("Die Eingaben konnten nicht erfolgreich validiert werden!");
   }
