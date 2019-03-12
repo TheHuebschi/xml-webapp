@@ -81,6 +81,13 @@
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
+        // Check if no picture was uploaded
+        if(empty($picInput)){
+            $errorText .= "Sie müssen ein Bild auswählen!";
+            echo $errorText;
+            return "error";
+        }
+
         // Check if image file is a actual image or fake image
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
             $errorText .= "Nur JPG, JPEG, PNG & GIF files sind erlaubt. ";
